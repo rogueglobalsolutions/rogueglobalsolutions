@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industries We Serve</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="/static/images/logo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: #1e2430;
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #ffffff;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #1ea7d9;
+            display: block;
+            font-size: 0.6rem;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #ffc400;
+        }
+
+        .nav-links a.active {
+            color: #ffc400;
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1.2rem;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #ffc400;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.7rem 1.5rem;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 4px;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #1ea7d9;
+            color: #1ea7d9;
+        }
+
+        .btn-outline:hover {
+            background: #1ea7d9;
+            color: #fff;
+        }
+
+        .btn-primary {
+            background: #ffc400;
+            color: #1e2430;
+            box-shadow: 0 4px 15px rgba(255, 196, 0, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #ffcd33;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 196, 0, 0.5);
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1e2430 0%, #2d3748 100%);
+            color: #fff;
+            padding: 8rem 5% 6rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(30, 167, 217, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255, 196, 0, 0.1) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #ccc;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+        }
+
+        .section {
+            padding: 5rem 5%;
+        }
+
+        .section-alt {
+            background: #f8f9fa;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #1e2430;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .industries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .industry-card {
+            background: #fff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s;
+            border: 2px solid transparent;
+        }
+
+        .industry-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(30, 167, 217, 0.2);
+            border-color: #1ea7d9;
+        }
+
+        .industry-icon {
+            background: linear-gradient(135deg, #1ea7d9 0%, #1589b8 100%);
+            padding: 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .industry-icon::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+
+        .industry-icon i {
+            font-size: 4rem;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .industry-content {
+            padding: 2rem;
+        }
+
+        .industry-content h3 {
+            font-size: 1.5rem;
+            color: #1e2430;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .industry-content p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .services-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: #e8f4f8;
+            color: #1ea7d9;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .stats-section {
+            background: linear-gradient(135deg, #1e2430 0%, #2d3748 100%);
+            color: #fff;
+            padding: 5rem 5%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stats-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 50%, rgba(255, 196, 0, 0.1) 0%, transparent 50%);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            color: #ffc400;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            color: #ccc;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .process-section {
+            padding: 5rem 5%;
+            background: #f8f9fa;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 3rem auto 0;
+        }
+
+        .process-step {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            position: relative;
+            border-top: 4px solid #1ea7d9;
+        }
+
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            width: 40px;
+            height: 40px;
+            background: #ffc400;
+            color: #1e2430;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(255, 196, 0, 0.4);
+        }
+
+        .process-step h3 {
+            font-size: 1.2rem;
+            color: #1e2430;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .process-step p {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .cta-section {
+            background: #1e2430;
+            padding: 5rem 5%;
+            text-align: center;
+            color: #fff;
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #ccc;
+            line-height: 1.8;
+        }
+
+        .footer {
+            background: #1e2430;
+            color: #fff;
+            padding: 4rem 5% 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);  /* All equal */
+            gap: 3rem;
+        }
+
+        .footer-section h3 {
+            color: #ffc400;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #ffc400;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #888;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .industries-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+        <nav>
+            <div class="logo">
+                ROGUE
+                <span>GLOBAL SOLUTIONS</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">OUR CULTURE</a></li>
+                <li><a href="pricing.html">PRICING</a></li>
+                <li><a href="services.html">SERVICES</a></li>
+                <li><a href="industries.html" class="active">INDUSTRIES</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+            </ul>
+            <div class="cta-buttons">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rogueglobalsolutions@gmail.com" target="_blank" class="btn btn-primary">START A CONVERSATION</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>INDUSTRIES WE SERVE</h1>
+            <p>From startups to enterprises, we provide world-class Filipino talent across multiple industries. Our creative and tech teams are ready to scale your business operations.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>POWERING BUSINESSES ACROSS THE GLOBE</h2>
+                <p>Rogue Global Solutions has successfully partnered with companies in diverse industries, delivering exceptional talent and reliable service. Our teams are equipped to handle the unique challenges of each sector.</p>
+            </div>
+
+            <div class="industries-grid">
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <div class="industry-content">
+                        <h3>Media & Entertainment</h3>
+                        <p>We support content creators, production companies, and streaming platforms with skilled video editors, motion graphics designers, and creative production teams.</p>
+                        <div class="services-tags">
+                            <span class="tag">Video Editing</span>
+                            <span class="tag">Motion Graphics</span>
+                            <span class="tag">Post-Production</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="industry-content">
+                        <h3>E-Commerce & Retail</h3>
+                        <p>Help scale your online store with virtual assistants, social media managers, graphic designers, and customer support specialists dedicated to your brand.</p>
+                        <div class="services-tags">
+                            <span class="tag">Virtual Assistants</span>
+                            <span class="tag">Social Media</span>
+                            <span class="tag">Graphic Design</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <div class="industry-content">
+                        <h3>Technology & SaaS</h3>
+                        <p>Build and maintain your software products with experienced developers, IT support teams, and technical specialists who understand modern tech stacks.</p>
+                        <div class="services-tags">
+                            <span class="tag">Web Development</span>
+                            <span class="tag">App Development</span>
+                            <span class="tag">IT Support</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <div class="industry-content">
+                        <h3>Digital Marketing</h3>
+                        <p>Agencies and marketing teams trust us for content creation, social media management, graphic design, and video production to serve their clients effectively.</p>
+                        <div class="services-tags">
+                            <span class="tag">Content Creation</span>
+                            <span class="tag">Social Media</span>
+                            <span class="tag">Video Production</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="industry-content">
+                        <h3>Real Estate</h3>
+                        <p>Streamline operations with virtual assistants for lead management, administrative support, social media coordination, and property listing management.</p>
+                        <div class="services-tags">
+                            <span class="tag">Admin Support</span>
+                            <span class="tag">Lead Management</span>
+                            <span class="tag">Marketing</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <div class="industry-content">
+                        <h3>Healthcare & Wellness</h3>
+                        <p>Support your practice with administrative staff, IT support for health systems, and content creators for patient education and digital presence.</p>
+                        <div class="services-tags">
+                            <span class="tag">Admin Support</span>
+                            <span class="tag">IT Support</span>
+                            <span class="tag">Content Creation</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="industry-content">
+                        <h3>Education & E-Learning</h3>
+                        <p>Educational institutions and online course creators partner with us for video editing, course development support, and administrative assistance.</p>
+                        <div class="services-tags">
+                            <span class="tag">Video Editing</span>
+                            <span class="tag">Content Moderation</span>
+                            <span class="tag">Admin Support</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <div class="industry-content">
+                        <h3>Food & Hospitality</h3>
+                        <p>Restaurants and hospitality businesses benefit from our social media teams, graphic designers, and administrative support for operations management.</p>
+                        <div class="services-tags">
+                            <span class="tag">Social Media</span>
+                            <span class="tag">Design</span>
+                            <span class="tag">Admin Support</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="industry-card">
+                    <div class="industry-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="industry-content">
+                        <h3>Finance & Consulting</h3>
+                        <p>Professional services firms rely on us for back-office support, IT infrastructure management, and digital content creation for client communications.</p>
+                        <div class="services-tags">
+                            <span class="tag">Virtual Assistants</span>
+                            <span class="tag">IT Support</span>
+                            <span class="tag">Content Creation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>9+</h3>
+                <p>Industries Served</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>Client Satisfaction</p>
+            </div>
+            <div class="stat-item">
+                <h3>24/7</h3>
+                <p>Global Support</p>
+            </div>
+            <div class="stat-item">
+                <h3>5+</h3>
+                <p>Years Experience</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="process-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>HOW WE WORK WITH YOUR INDUSTRY</h2>
+                <p>Our proven process ensures seamless integration of Filipino talent into your business operations, regardless of your industry.</p>
+            </div>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Discovery Call</h3>
+                    <p>We learn about your industry, business needs, and specific challenges you're facing.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Needs Analysis</h3>
+                    <p>Our team analyzes your requirements and recommends the best talent solutions for your sector.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Talent Matching</h3>
+                    <p>We match you with pre-vetted professionals who have experience in your industry.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Onboarding</h3>
+                    <p>Your new team members are onboarded with industry-specific training and workflows.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h3>Integration</h3>
+                    <p>We ensure smooth integration with your existing systems and processes.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">6</div>
+                    <h3>Ongoing Support</h3>
+                    <p>Continuous monitoring, quality checks, and performance optimization for your success.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>ROGUE GLOBAL SOLUTIONS</h3>
+                <p style="color: #ccc; margin-bottom: 1rem;">Creative & Tech Manpower Outsourcing</p>
+                <p style="color: #888; font-size: 0.9rem;">Global Headquarters</p>
+            </div>
+            <div class="footer-section">
+                <h3>OUR SERVICES</h3>
+                <ul>
+                    <li><a href="services.html">Video Editing</a></li>
+                    <li><a href="services.html">Web Development</a></li>
+                    <li><a href="services.html">IT Support</a></li>
+                    <li><a href="services.html">Virtual Assistants</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>COMPANY</h3>
+                <ul>
+                    <li><a href="index.html">Our Culture</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="#contact">Start a Conversation</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>INDUSTRIES</h3>
+                <ul>
+                    <li><a href="industries.html">Media & Entertainment</a></li>
+                    <li><a href="industries.html">E-Commerce</a></li>
+                    <li><a href="industries.html">Technology</a></li>
+                    <li><a href="industries.html">View All Industries</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Rogue Global Solutions © 2026 All Rights reserved. | Privacy Policy | Terms | Payments</p>
+        </div>
+    </footer>
+</body>
+</html>

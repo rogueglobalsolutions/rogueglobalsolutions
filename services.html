@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="/static/images/logo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: #1e2430;
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #ffffff;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #1ea7d9;
+            display: block;
+            font-size: 0.6rem;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #ffc400;
+        }
+
+        .nav-links a.active {
+            color: #ffc400;
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1.2rem;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #ffc400;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.7rem 1.5rem;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 4px;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #1ea7d9;
+            color: #1ea7d9;
+        }
+
+        .btn-outline:hover {
+            background: #1ea7d9;
+            color: #fff;
+        }
+
+        .btn-primary {
+            background: #ffc400;
+            color: #1e2430;
+            box-shadow: 0 4px 15px rgba(249, 215, 28, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #ffc400;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(249, 215, 28, 0.5);
+        }
+
+        .hero {
+            background: #1e2430;
+            color: #fff;
+            padding: 8rem 5% 6rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(30, 167, 217, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(249, 215, 28, 0.1) 0%, transparent 50%);
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                linear-gradient(45deg, transparent 48%, rgba(30, 167, 217, 0.03) 50%, transparent 52%),
+                linear-gradient(-45deg, transparent 48%, rgba(249, 215, 28, 0.03) 50%, transparent 52%);
+            background-size: 60px 60px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+
+        .hero h1::after {
+            content: '';
+            display: block;
+            width: 150px;
+            height: 4px;
+            background: #ffc400;
+            margin: 1rem auto;
+            box-shadow: 0 0 20px rgba(249, 215, 28, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #ccc;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+        }
+
+        .section {
+            padding: 5rem 5%;
+            position: relative;
+        }
+
+        .section-alt {
+            background: #f8f9fa;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #1e2430;
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #ffc400;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: #666;
+            max-width: 700px;
+            margin: 1.5rem auto 0;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .service-card {
+            background: #fff;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #ffc400;
+            transform: scaleX(0);
+            transition: transform 0.4s;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 20px 60px rgba(30, 167, 217, 0.25);
+            border-color: #1ea7d9;
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: #1ea7d9;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #fff;
+            box-shadow: 0 8px 24px rgba(30, 167, 217, 0.3);
+            transition: all 0.3s;
+        }
+
+        .service-card:hover .service-icon {
+            background: #ffc400;
+            color: #1e2430;
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 12px 32px rgba(249, 215, 28, 0.4);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1e2430;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-features {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .service-features li {
+            padding: 0.7rem 0;
+            color: #555;
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            transition: all 0.2s;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .service-features li:last-child {
+            border-bottom: none;
+        }
+
+        .service-features li:hover {
+            padding-left: 0.5rem;
+            color: #1ea7d9;
+        }
+
+        .service-features li i {
+            color: #ffc400;
+            font-size: 1rem;
+            width: 20px;
+        }
+
+        .models-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+
+        .model-card {
+            background: #fff;
+            padding: 3rem 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: all 0.4s;
+            position: relative;
+            border: 2px solid transparent;
+            overflow: hidden;
+        }
+
+        .model-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(30, 167, 217, 0.02);
+            opacity: 0;
+            transition: opacity 0.4s;
+        }
+
+        .model-card:hover::before {
+            opacity: 1;
+        }
+
+        .model-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(249, 215, 28, 0.3);
+            border-color: #ffc400;
+        }
+
+        .model-number {
+            width: 70px;
+            height: 70px;
+            background: #1ea7d9;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 8px 24px rgba(30, 167, 217, 0.3);
+            transition: all 0.3s;
+            position: relative;
+            z-index: 1;
+        }
+
+        .model-card:hover .model-number {
+            background: #ffc400;
+            color: #1e2430;
+            transform: scale(1.15) rotate(360deg);
+            box-shadow: 0 12px 32px rgba(249, 215, 28, 0.4);
+        }
+
+        .model-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1e2430;
+            position: relative;
+            z-index: 1;
+        }
+
+        .model-card p {
+            color: #666;
+            line-height: 1.8;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stats-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(249, 215, 28, 0.15);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #1ea7d9;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        .cta-section {
+            background: #1e2430;
+            padding: 5rem 5%;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 50%, rgba(30, 167, 217, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 80%, rgba(249, 215, 28, 0.1) 0%, transparent 50%);
+        }
+
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #ccc;
+            line-height: 1.8;
+        }
+
+        .cta-buttons-wrap {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .float-icon {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .footer {
+            background: #1e2430;
+            color: #fff;
+            padding: 4rem 5% 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);  /* All equal */
+            gap: 3rem;
+        }
+
+        .footer-section h3 {
+            color: #ffc400;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #ffc400;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #888;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons-wrap {
+                flex-direction: column;
+            }
+
+            .section-header h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+        <nav>
+            <div class="logo">
+                ROGUE
+                <span>GLOBAL SOLUTIONS</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">OUR CULTURE</a></li>
+                <li><a href="pricing.html">PRICING</a></li>
+                <li><a href="services.html" class="active">SERVICES</a></li>
+                <li><a href="industries.html">INDUSTRIES</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+            </ul>
+            <div class="cta-buttons">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rogueglobalsolutions@gmail.com" target="_blank" class="btn btn-primary">START A CONVERSATION</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>OUR SERVICES</h1>
+            <p>World-class Filipino talent delivering exceptional results across creative, tech, and business support services.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>CREATIVE SERVICES</h2>
+                <p>Professional creative teams that bring your vision to life with exceptional quality and attention to detail.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon float-icon">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h3>Video Editing Teams</h3>
+                    <p>Expert video editors who transform raw footage into compelling visual stories. From corporate videos to social media content, we deliver polish and professionalism.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Professional editing software expertise</li>
+                        <li><i class="fas fa-check-circle"></i> Fast turnaround times</li>
+                        <li><i class="fas fa-check-circle"></i> Unlimited revisions</li>
+                        <li><i class="fas fa-check-circle"></i> Multiple format exports</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon float-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Graphic Design</h3>
+                    <p>Creative graphic designers who craft stunning visuals for your brand, marketing materials, and digital presence.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Brand identity design</li>
+                        <li><i class="fas fa-check-circle"></i> UI/UX Design</li>
+                        <li><i class="fas fa-check-circle"></i> Social media graphic postings</li>
+                        <li><i class="fas fa-check-circle"></i> Mobile Application Design</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon float-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3>Creative Production</h3>
+                    <p>Full-service creative production support from concept to final delivery, ensuring your projects exceed expectations.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Project management</li>
+                        <li><i class="fas fa-check-circle"></i> Creative direction</li>
+                        <li><i class="fas fa-check-circle"></i> Quality control</li>
+                        <li><i class="fas fa-check-circle"></i> Asset management</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>TECH SERVICES</h2>
+                <p>Skilled developers and IT professionals who build, maintain, and optimize your digital infrastructure.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon float-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Full-stack web developers who create responsive, scalable websites and web applications tailored to your business needs.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Frontend & backend development</li>
+                        <li><i class="fas fa-check-circle"></i> Responsive design implementation</li>
+                        <li><i class="fas fa-check-circle"></i> VPS</li>
+                        <li><i class="fas fa-check-circle"></i> Performance optimization</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon float-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Business Web/Mobile Application</h3>
+                    <p>Expert developers who build robust, secure, and scalable server-side solutions for your applications.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> API development</li>
+                        <li><i class="fas fa-check-circle"></i> Database architecture</li>
+                        <li><i class="fas fa-check-circle"></i> UI/UX</li>
+                        <li><i class="fas fa-check-circle"></i> Security implementation</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon float-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>IT Support</h3>
+                    <p>Reliable IT support specialists providing troubleshooting, maintenance, and technical assistance for your team.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Technical support</li>
+                        <li><i class="fas fa-check-circle"></i> System maintenance</li>
+                        <li><i class="fas fa-check-circle"></i> System Administration</li>
+                        <li><i class="fas fa-check-circle"></i> Customer service</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>BUSINESS SUPPORT</h2>
+                <p>Dedicated professionals who streamline your operations and help you focus on growing your business.</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon float-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Virtual Assistants</h3>
+                    <p>Professional virtual assistants who handle administrative tasks, scheduling, and day-to-day operations efficiently.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Calendar & email management</li>
+                        <li><i class="fas fa-check-circle"></i> Data entry & organization</li>
+                        <li><i class="fas fa-check-circle"></i> Customer communication</li>
+                        <li><i class="fas fa-check-circle"></i> Research & reporting</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon float-icon">
+                        <i class="fas fa-hashtag"></i>
+                    </div>
+                    <h3>Social Media Teams</h3>
+                    <p>Strategic social media managers who build your online presence and engage with your audience effectively.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Content planning & scheduling</li>
+                        <li><i class="fas fa-check-circle"></i> Community management</li>
+                        <li><i class="fas fa-check-circle"></i> Analytics & reporting</li>
+                        <li><i class="fas fa-check-circle"></i> Campaign management</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon float-icon">
+                        <i class="fas fa-shield-halved"></i>
+                    </div>
+                    <h3>Content Moderation</h3>
+                    <p>Vigilant content moderators ensuring your platform maintains quality standards and community guidelines.</p>
+                    <ul class="service-features">
+                        <li><i class="fas fa-check-circle"></i> Real-time content review</li>
+                        <li><i class="fas fa-check-circle"></i> Policy enforcement</li>
+                        <li><i class="fas fa-check-circle"></i> User safety monitoring</li>
+                        <li><i class="fas fa-check-circle"></i> Reporting & escalation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-content">
+            <h2>READY TO BUILD YOUR TEAM?</h2>
+            <p>Let's discuss how our world-class Filipino talent can help scale your business. Our team is ready to respond and create a customized solution for your needs.</p>
+            <div class="cta-buttons-wrap">
+                <a href="pricing.html" class="btn btn-outline">VIEW PRICING</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>ROGUE GLOBAL SOLUTIONS</h3>
+                <p style="color: #ccc; margin-bottom: 1rem;">Creative & Tech Manpower Outsourcing</p>
+                <p style="color: #888; font-size: 0.9rem;">Global Headquarters</p>
+            </div>
+            <div class="footer-section">
+                <h3>OUR SERVICES</h3>
+                <ul>
+                    <li><a href="services.html">Video Editing</a></li>
+                    <li><a href="services.html">Web Development</a></li>
+                    <li><a href="services.html">IT Support</a></li>
+                    <li><a href="services.html">Virtual Assistants</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>COMPANY</h3>
+                <ul>
+                    <li><a href="index.html">Our Culture</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="#contact">Start a Conversation</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>AREAS WE SERVICE</h3>
+                <ul>
+                    <li><a href="#">North America</a></li>
+                    <li><a href="#">Europe</a></li>
+                    <li><a href="#">Asia Pacific</a></li>
+                    <li><a href="#">Global Support</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Rogue Global Solutions © 2026 All Rights reserved. | Privacy Policy | Terms | Payments</p>
+        </div>
+    </footer>
+</body>
+</html>

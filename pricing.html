@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="/static/images/logo.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: #1e2430;
+            padding: 1rem 5%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: #ffffff;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #1ea7d9;
+            display: block;
+            font-size: 0.6rem;
+            letter-spacing: 4px;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: #ffc400;
+        }
+
+        .nav-links a.active {
+            color: #ffc400;
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1.2rem;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #ffc400;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.7rem 1.5rem;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 4px;
+        }
+
+        .btn-primary {
+            background: #ffc400;
+            color: #1e2430;
+            box-shadow: 0 4px 15px rgba(249, 215, 28, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #ffcd33;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(249, 215, 28, 0.5);
+        }
+
+        .hero {
+            background: #1e2430;
+            color: #fff;
+            padding: 8rem 5% 6rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(30, 167, 217, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(249, 215, 28, 0.1) 0%, transparent 50%);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+        }
+
+        .hero h1::after {
+            content: '';
+            display: block;
+            width: 150px;
+            height: 4px;
+            background: #ffc400;
+            margin: 1rem auto;
+            box-shadow: 0 0 20px rgba(249, 215, 28, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #ccc;
+            line-height: 1.8;
+        }
+
+        .stats {
+            background: #fff;
+            padding: 3rem 5%;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            margin-top: -3rem;
+            position: relative;
+            z-index: 10;
+            border-radius: 16px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+            text-align: center;
+        }
+
+        .stat-item {
+            position: relative;
+            padding: 1rem;
+            transition: transform 0.3s;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            color: #1ea7d9;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+        }
+
+        .stat-item p {
+            color: #666;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        .section {
+            padding: 5rem 5%;
+        }
+
+        .section-alt {
+            background: #f8f9fa;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: #1e2430;
+            font-weight: 700;
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1.5rem;
+        }
+
+        .highlight {
+            color: #ffc400;
+            font-weight: 700;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .image-placeholder {
+            background: #1ea7d9;
+            height: 400px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: 700;
+            box-shadow: 0 10px 40px rgba(30, 167, 217, 0.3);
+            position: relative;
+            overflow: hidden;
+            border: 3px solid #ffc400;
+        }
+
+        .pricing-cta-box {
+            background: #1e2430;
+            color: #fff;
+            padding: 4rem 3rem;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(30, 36, 48, 0.4);
+            border: 3px solid #ffc400;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-cta-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 50% 50%, rgba(249, 215, 28, 0.05) 0%, transparent 70%);
+        }
+
+        .pricing-cta-box h3 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+            color: #ffc400;
+        }
+
+        .pricing-cta-box p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 1;
+            color: #ccc;
+        }
+
+        .pricing-cta-box .btn {
+            position: relative;
+            z-index: 1;
+            font-size: 1.1rem;
+            padding: 1rem 2rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(30, 167, 217, 0.2);
+            border-color: #ffc400;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #1ea7d9, #ffc400);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 15px rgba(30, 167, 217, 0.3);
+        }
+
+        .feature-icon i {
+            font-size: 1.8rem;
+            color: #fff;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            color: #1e2430;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            color: #666;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .testimonial {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .testimonial:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(249, 215, 28, 0.3);
+            border-color: #ffc400;
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .avatar {
+            width: 50px;
+            height: 50px;
+            background: #1ea7d9;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 15px rgba(30, 167, 217, 0.3);
+        }
+
+        .testimonial:hover .avatar {
+            background: #ffc400;
+            color: #1e2430;
+        }
+
+        .testimonial-info h4 {
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+            color: #1e2430;
+        }
+
+        .testimonial-info p {
+            font-size: 0.85rem;
+            color: #888;
+            margin: 0;
+        }
+
+        .stars {
+            color: #ffc400;
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer {
+            background: #1e2430;
+            color: #fff;
+            padding: 4rem 5% 2rem;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);  /* All equal */
+            gap: 3rem;
+        }
+
+        .footer-section h3 {
+            color: #ffc400;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #ffc400;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #888;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .two-column {
+                grid-template-columns: 1fr;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .stats-container {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                ROGUE
+                <span>GLOBAL SOLUTIONS</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">OUR CULTURE</a></li>
+                <li><a href="pricing.html" class="active">PRICING</a></li>
+                <li><a href="services.html">SERVICES</a></li>
+                <li><a href="industries.html">INDUSTRIES</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+            </ul>
+            <div class="cta-buttons">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rogueglobalsolutions@gmail.com" target="_blank" class="btn btn-primary">START A CONVERSATION</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>TRANSPARENT & FLEXIBLE PRICING</h1>
+            <p>Every business is unique, and so are their needs. We believe in creating customized pricing solutions that deliver maximum value for your specific requirements. Let's discuss how we can build the perfect team for your budget.</p>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="stats-container">
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>Filipino Owned</p>
+            </div>
+            <div class="stat-item">
+                <h3>5+</h3>
+                <p>Years Experience</p>
+            </div>
+            <div class="stat-item">
+                <h3>1</h3>
+                <p>Founder</p>
+            </div>
+            <div class="stat-item">
+                <h3>100%</h3>
+                <p>Global Support</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-container">
+            <h2 style="text-align: center;">HOW WE STRUCTURE OUR PRICING</h2>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 3rem;">At Rogue Global Solutions, we understand that one-size-fits-all pricing doesn't work for everyone. That's why we offer <span class="highlight">flexible pricing models</span> tailored to your business needs, whether you need full-time talent, project-based support, or a hybrid solution.</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Per Talent Pricing</h3>
+                    <p>Dedicated team members working exclusively for your business with full-time commitment and consistency.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3>Project-Based Pricing</h3>
+                    <p>Fixed pricing for specific deliverables and projects with clear timelines and milestones.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-layer-group"></i>
+                    </div>
+                    <h3>Hybrid Solutions</h3>
+                    <p>Combine different pricing models to match your unique workflow and business requirements.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="section-container">
+            <div class="two-column">
+                <div class="image-placeholder">
+                    <img src="https://images.pexels.com/photos/8102677/pexels-photo-8102677.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
+                         alt="Creative & Tech Teams - Video Editor at Work"
+                         style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">
+                </div>
+                <div>
+                    <h2>WHAT'S INCLUDED?</h2>
+                    <p>When you partner with Rogue Global Solutions, you get more than just talent. Our <span class="highlight">all-inclusive approach</span> ensures your success from day one.</p>
+                    <ul style="list-style: none; padding: 0; margin-top: 2rem;">
+                        <li style="padding: 0.8rem 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: center; gap: 1rem;">
+                            <i class="fas fa-check-circle" style="color: #1ea7d9; font-size: 1.3rem;"></i>
+                            <span>Project Management & Coordination</span>
+                        </li>
+                        <li style="padding: 0.8rem 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: center; gap: 1rem;">
+                            <i class="fas fa-check-circle" style="color: #1ea7d9; font-size: 1.3rem;"></i>
+                            <span>Quality Control & Assurance</span>
+                        </li>
+                        <li style="padding: 0.8rem 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: center; gap: 1rem;">
+                            <i class="fas fa-check-circle" style="color: #1ea7d9; font-size: 1.3rem;"></i>
+                            <span>Onboarding</span>
+                        </li>
+                        <li style="padding: 0.8rem 0; border-bottom: 1px solid #e0e0e0; display: flex; align-items: center; gap: 1rem;">
+                            <i class="fas fa-check-circle" style="color: #1ea7d9; font-size: 1.3rem;"></i>
+                            <span>Performance Monitoring</span>
+                        </li>
+                        <li style="padding: 0.8rem 0; display: flex; align-items: center; gap: 1rem;">
+                            <i class="fas fa-check-circle" style="color: #1ea7d9; font-size: 1.3rem;"></i>
+                            <span>Continuous Support & Communication</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="pricing">
+        <div class="section-container">
+            <div class="two-column">
+                <div>
+                    <h2>LET'S DISCUSS YOUR NEEDS</h2>
+                    <p>Rather than providing generic pricing that may not fit your specific situation, we prefer to have a conversation about your needs, challenges, and goals. This allows us to create a <span class="highlight">customized proposal</span> that delivers the best value for your investment.</p>
+                    <p>During our consultation, we'll discuss:</p>
+                    <ul style="list-style: none; padding: 0; margin-top: 1.5rem;">
+                        <li style="padding: 0.5rem 0; display: flex; align-items: flex-start; gap: 0.8rem;">
+                            <i class="fas fa-chevron-right" style="color: #ffc400; margin-top: 0.3rem;"></i>
+                            <span>Your specific talent requirements and skill levels needed</span>
+                        </li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: flex-start; gap: 0.8rem;">
+                            <i class="fas fa-chevron-right" style="color: #ffc400; margin-top: 0.3rem;"></i>
+                            <span>Project scope, timelines, and deliverables</span>
+                        </li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: flex-start; gap: 0.8rem;">
+                            <i class="fas fa-chevron-right" style="color: #ffc400; margin-top: 0.3rem;"></i>
+                            <span>Preferred engagement model (full-time, part-time, project-based)</span>
+                        </li>
+                        <li style="padding: 0.5rem 0; display: flex; align-items: flex-start; gap: 0.8rem;">
+                            <i class="fas fa-chevron-right" style="color: #ffc400; margin-top: 0.3rem;"></i>
+                            <span>Budget considerations and payment preferences</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="pricing-cta-box">
+                    <h3>Ready to Get Started?</h3>
+                    <p>Schedule a free consultation with our team to discuss your project and receive a customized pricing proposal tailored to your needs.</p>
+                    <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rogueglobalsolutions@gmail.com&su=Pricing%20Inquiry" target="_blank" class="btn btn-primary">REQUEST A QUOTE</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="section-container">
+            <h2 style="text-align: center; margin-bottom: 3rem;">WHAT OUR CLIENTS SAY</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <div class="testimonial-header">
+                        <div class="avatar">JD</div>
+                        <div class="testimonial-info">
+                            <h4>John Davis</h4>
+                            <p>December 15, 2024</p>
+                        </div>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <p>I've worked with Rogue Global Solutions for many years and found them to be efficient, accommodating and professional. They work diligently to support our creative needs and deliver consistently.</p>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-header">
+                        <div class="avatar">SM</div>
+                        <div class="testimonial-info">
+                            <h4>Sarah Martinez</h4>
+                            <p>November 28, 2024</p>
+                        </div>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <p>Great support! The team at Rogue Global Solutions has been instrumental in scaling our development operations efficiently.</p>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-header">
+                        <div class="avatar">RC</div>
+                        <div class="testimonial-info">
+                            <h4>Robert Chen</h4>
+                            <p>October 10, 2024</p>
+                        </div>
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <p>Rogue Global Solutions managed our video editing team for years and we just had a big expansion to a new market and I cannot say enough about how professional they've been throughout the transition.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>ROGUE GLOBAL SOLUTIONS</h3>
+                <p style="color: #ccc; margin-bottom: 1rem;">Creative & Tech Manpower Outsourcing</p>
+                <p style="color: #888; font-size: 0.9rem;">Global Headquarters</p>
+            </div>
+            <div class="footer-section">
+                <h3>OUR SERVICES</h3>
+                <ul>
+                    <li><a href="services.html">Video Editing</a></li>
+                    <li><a href="services.html">Web Development</a></li>
+                    <li><a href="services.html">IT Support</a></li>
+                    <li><a href="services.html">Virtual Assistants</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>COMPANY</h3>
+                <ul>
+                    <li><a href="index.html">Our Culture</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="#contact">Start a Conversation</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>AREAS WE SERVICE</h3>
+                <ul>
+                    <li><a href="#">North America</a></li>
+                    <li><a href="#">Europe</a></li>
+                    <li><a href="#">Asia Pacific</a></li>
+                    <li><a href="#">Global Support</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Rogue Global Solutions © 2026 All Rights reserved. | Privacy Policy | Terms | Payments</p>
+        </div>
+    </footer>
+</body>
+</html>
