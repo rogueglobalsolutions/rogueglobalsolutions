@@ -20,8 +20,4 @@
     <loc>https://rogueglobalsolutions.tech/about.html</loc>
     <priority>0.8</priority>
   </url>
-  <url>
-    <loc>https://rogueglobalsolutions.tech/resources.html</loc>
-    <priority>0.7</priority>
-  </url>
 </urlset>
