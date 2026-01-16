@@ -297,6 +297,16 @@
         letter-spacing: -1px;
     }
 
+    .hero h1::after {
+        content: '';
+        display: block;
+        width: 150px;
+        height: 4px;
+        background: #ffc400;
+        margin: 1rem auto;
+        box-shadow: 0 0 20px rgba(255, 196, 0, 0.5);
+    }
+
     .hero p {
         font-size: 1.3rem;
         color: #ccc;
@@ -336,6 +346,11 @@
         max-width: 800px;
         margin: 0 auto;
         line-height: 1.8;
+    }
+
+    .highlight {
+        color: #ffc400;
+        font-weight: 700;
     }
 
     .industries-grid {
