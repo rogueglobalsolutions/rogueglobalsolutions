@@ -513,6 +513,23 @@
             border-color: #1ea7d9;
         }
 
+        .feature-card-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #1ea7d9, #ffc400);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 15px rgba(30, 167, 217, 0.3);
+        }
+
+        .feature-card-icon i {
+            font-size: 1.6rem;
+            color: #fff;
+        }
+
         .feature-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
@@ -966,15 +983,24 @@
 
             <div class="feature-cards">
                 <div class="feature-card">
-                    <h3>🏆 Excellence in Service</h3>
+                    <div class="feature-card-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3>Excellence in Service</h3>
                     <p>We maintain the highest standards in talent recruitment, training, and performance monitoring to ensure your team delivers exceptional results consistently.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>💡 Innovation Driven</h3>
+                    <div class="feature-card-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Innovation Driven</h3>
                     <p>We stay ahead of industry trends and implement cutting-edge tools and workflows to give your business a competitive advantage.</p>
                 </div>
                 <div class="feature-card">
-                    <h3>🤝 Reliable Partnership</h3>
+                    <div class="feature-card-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Reliable Partnership</h3>
                     <p>Count on us for transparent communication, dependable delivery, and long-term commitment to your business success.</p>
                 </div>
             </div>
