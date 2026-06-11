@@ -6,8 +6,8 @@
     <link rel="canonical" href="https://rogueglobalsolutions.tech/pricing.html">
 
     <title>Pricing - Rogue Global Solutions | Affordable Rates</title>
-    <meta name="description" content="Get predictable costs with our transparent pricing. World-class Filipino talent for video editing, development, IT support, and virtual assistants at competitive rates.">
-    <meta name="keywords" content="outsourcing pricing, Filipino talent rates, virtual assistant cost, video editing pricing, web development rates, IT support pricing, affordable outsourcing">
+    <meta name="description" content="Get predictable costs with our transparent pricing. World-class Filipino talent for web development, mobile apps, video editing, and graphic design at competitive rates.">
+    <meta name="keywords" content="outsourcing pricing, Filipino talent rates, video editing pricing, web development rates, mobile app development pricing, graphic design rates, affordable outsourcing">
 
     <meta property="og:title" content="Pricing - Rogue Global Solutions | Transparent & Affordable Rates">
     <meta property="og:description" content="Get predictable costs with our transparent pricing. World-class Filipino talent at competitive rates.">
@@ -35,39 +35,21 @@
       "offers": [
         {
           "@type": "Offer",
-          "name": "Video Editing Services",
-          "description": "Professional video editing teams",
-          "category": "Creative Services"
-        },
-        {
-          "@type": "Offer",
-          "name": "Software Development",
-          "description": "Experienced software developers",
+          "name": "Web & Mobile Development",
+          "description": "Full-stack web and cross-platform mobile app development",
           "category": "Technology Services"
         },
         {
           "@type": "Offer",
-          "name": "IT Support",
-          "description": "Technical support specialists",
-          "category": "Technology Services"
-        },
-        {
-          "@type": "Offer",
-          "name": "Virtual Assistants",
-          "description": "Dedicated virtual assistants",
-          "category": "Business Support"
-        },
-        {
-          "@type": "Offer",
-          "name": "Motion Graphics Design",
-          "description": "Professional motion graphics designers",
+          "name": "Video Editing",
+          "description": "Professional video editing and post-production",
           "category": "Creative Services"
         },
         {
           "@type": "Offer",
-          "name": "Social Media Management",
-          "description": "Experienced social media managers",
-          "category": "Marketing Services"
+          "name": "Graphic Design & UI/UX",
+          "description": "Brand design, UI systems, and digital visuals",
+          "category": "Creative Services"
         }
       ]
     }
@@ -122,7 +104,6 @@
             font-weight: 600;
         }
 
-        /* Hamburger Menu */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -521,7 +502,6 @@
             color: #888;
         }
 
-        /* Mobile Responsive */
         @media (max-width: 768px) {
             .hamburger {
                 display: flex;
@@ -867,10 +847,10 @@
             <div class="footer-section">
                 <h3>OUR SERVICES</h3>
                 <ul>
-                    <li><a href="services.html">Video Editing</a></li>
                     <li><a href="services.html">Web Development</a></li>
-                    <li><a href="services.html">IT Support</a></li>
-                    <li><a href="services.html">Virtual Assistants</a></li>
+                    <li><a href="services.html">Mobile App Development</a></li>
+                    <li><a href="services.html">Video Editing</a></li>
+                    <li><a href="services.html">Graphic Design & UI/UX</a></li>
                 </ul>
             </div>
             <div class="footer-section">
@@ -901,13 +881,11 @@
         const navLinks = document.getElementById('navLinks');
         const body = document.body;
 
-        // Toggle hamburger menu
         hamburger.addEventListener('click', (e) => {
             e.stopPropagation();
             hamburger.classList.toggle('active');
             navLinks.classList.toggle('active');
             
-            // Prevent body scroll when menu is open
             if (navLinks.classList.contains('active')) {
                 body.style.overflow = 'hidden';
             } else {
@@ -915,7 +893,6 @@
             }
         });
 
-        // Close menu when clicking on a link
         document.querySelectorAll('.nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 hamburger.classList.remove('active');
@@ -924,7 +901,6 @@
             });
         });
 
-        // Close menu when clicking on overlay
         navLinks.addEventListener('click', (e) => {
             if (e.target === navLinks) {
                 hamburger.classList.remove('active');
