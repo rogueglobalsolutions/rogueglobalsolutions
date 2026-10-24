@@ -1,18 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://rogueglobalsolutions.tech/services.html">
 
-    <title>Services - Rogue Global Solutions | Web & Mobile Development, Video Editing, Graphic Design & UI/UX</title>
+    <title>Web, Video &amp; Design Services | Rogue Global Solutions</title>
     <meta name="description" content="Expert Filipino teams for web & mobile development, video editing, and graphic design & UI/UX. World-class talent built around 3 core specializations.">
     <meta name="keywords" content="web development Philippines, mobile app development, video editing services, graphic design, UI UX design, Filipino talent, React developer, React Native, Figma design, outsourcing">
 
-    <meta property="og:title" content="Services - Rogue Global Solutions | Web & Mobile Dev, Video Editing, Graphic Design & UI/UX">
+    <meta property="og:title" content="Web, Video &amp; Design Services | Rogue Global Solutions">
     <meta property="og:description" content="Expert Filipino teams for web & mobile development, video editing, and graphic design & UI/UX.">
-    <meta property="og:image" content="https://rogueglobalsolutions.tech/static/images/logo.png">
+    <meta property="og:image" content="https://rogueglobalsolutions.tech/static/images/og-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://rogueglobalsolutions.tech/services.html">
+    <meta name="twitter:card" content="summary_large_image">
     <meta property="og:type" content="website">
 
     <link rel="icon" type="image/png" href="/static/images/logo.png">
@@ -60,833 +63,217 @@
     }
     </script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            overflow-x: hidden;
-        }
-
-        header {
-            background: #1e2430;
-            padding: 1rem 5%;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 900;
-            color: #ffffff;
-            letter-spacing: 2px;
-            z-index: 1001;
-        }
-
-        .logo span {
-            color: #1ea7d9;
-            display: block;
-            font-size: 0.6rem;
-            letter-spacing: 4px;
-            font-weight: 600;
-        }
-
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 6px;
-            z-index: 1001;
-            padding: 10px;
-            border-radius: 8px;
-            transition: background 0.3s;
-        }
-
-        .hamburger:hover { background: rgba(255, 196, 0, 0.1); }
-
-        .hamburger span {
-            width: 28px;
-            height: 3px;
-            background: #fff;
-            transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            border-radius: 3px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        }
-
-        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(9px, 9px); background: #ffc400; }
-        .hamburger.active span:nth-child(2) { opacity: 0; transform: translateX(-20px); }
-        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(9px, -9px); background: #ffc400; }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        .nav-links a:hover { color: #ffc400; }
-        .nav-links a.active { color: #ffc400; }
-
-        .nav-links a.active::after {
-            content: '';
-            position: absolute;
-            bottom: -1.2rem;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: #ffc400;
-        }
-
-        .cta-buttons { display: flex; gap: 1rem; }
-
-        .btn {
-            padding: 0.7rem 1.5rem;
-            border: none;
-            cursor: pointer;
-            font-weight: 600;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
-            border-radius: 4px;
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid #1ea7d9;
-            color: #1ea7d9;
-        }
-
-        .btn-outline:hover { background: #1ea7d9; color: #fff; }
-
-        .btn-primary {
-            background: #ffc400;
-            color: #1e2430;
-            box-shadow: 0 4px 15px rgba(249, 215, 28, 0.3);
-        }
-
-        .btn-primary:hover {
-            background: #ffc400;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(249, 215, 28, 0.5);
-        }
-
-        .hero {
-            background: #1e2430;
-            color: #fff;
-            padding: 8rem 5% 6rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 50%, rgba(30, 167, 217, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(249, 215, 28, 0.1) 0%, transparent 50%);
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: 
-                linear-gradient(45deg, transparent 48%, rgba(30, 167, 217, 0.03) 50%, transparent 52%),
-                linear-gradient(-45deg, transparent 48%, rgba(249, 215, 28, 0.03) 50%, transparent 52%);
-            background-size: 60px 60px;
-        }
-
-        .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1.5rem;
-            font-weight: 800;
-            letter-spacing: -1px;
-            text-shadow: 0 2px 20px rgba(0,0,0,0.3);
-        }
-
-        .hero h1::after {
-            content: '';
-            display: block;
-            width: 150px;
-            height: 4px;
-            background: #ffc400;
-            margin: 1rem auto;
-            box-shadow: 0 0 20px rgba(249, 215, 28, 0.5);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            color: #ccc;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            line-height: 1.8;
-        }
-
-        .section {
-            padding: 5rem 5%;
-            position: relative;
-        }
-
-        .section-alt { background: #f8f9fa; }
-
-        .section-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-            position: relative;
-        }
-
-        .section-header h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: #1e2430;
-            font-weight: 700;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-header h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: #ffc400;
-        }
-
-        .section-header p {
-            font-size: 1.1rem;
-            color: #666;
-            max-width: 700px;
-            margin: 1.5rem auto 0;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-            margin-bottom: 4rem;
-        }
-
-        .service-card {
-            background: #fff;
-            border-radius: 16px;
-            padding: 2.5rem;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 2px solid transparent;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .service-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0;
-            height: 4px;
-            background: #ffc400;
-            transform: scaleX(0);
-            transition: transform 0.4s;
-        }
-
-        .service-card:hover::before { transform: scaleX(1); }
-
-        .service-card:hover {
-            transform: translateY(-12px);
-            box-shadow: 0 20px 60px rgba(30, 167, 217, 0.25);
-            border-color: #1ea7d9;
-        }
-
-        .service-icon {
-            width: 80px;
-            height: 80px;
-            background: #1ea7d9;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
-            color: #fff;
-            box-shadow: 0 8px 24px rgba(30, 167, 217, 0.3);
-            transition: all 0.3s;
-        }
-
-        .service-card:hover .service-icon {
-            background: #ffc400;
-            color: #1e2430;
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 12px 32px rgba(249, 215, 28, 0.4);
-        }
-
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #1e2430;
-            font-weight: 700;
-        }
-
-        .service-card p {
-            color: #666;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-        }
-
-        .service-features {
-            list-style: none;
-            margin-top: 1.5rem;
-        }
-
-        .service-features li {
-            padding: 0.7rem 0;
-            color: #555;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            transition: all 0.2s;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .service-features li:last-child { border-bottom: none; }
-
-        .service-features li:hover { padding-left: 0.5rem; color: #1ea7d9; }
-
-        .service-features li i {
-            color: #ffc400;
-            font-size: 1rem;
-            width: 20px;
-        }
-
-        /* Tech tags */
-        .tech-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .tech-tag {
-            background: #e8f4f8;
-            color: #1ea7d9;
-            padding: 0.35rem 0.75rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 0.3px;
-        }
-
-        .cta-section {
-            background: #1e2430;
-            padding: 5rem 5%;
-            text-align: center;
-            color: #fff;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: 
-                radial-gradient(circle at 30% 50%, rgba(30, 167, 217, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 70% 80%, rgba(249, 215, 28, 0.1) 0%, transparent 50%);
-        }
-
-        .cta-content {
-            max-width: 800px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .cta-content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
-
-        .cta-content p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            color: #ccc;
-            line-height: 1.8;
-        }
-
-        .cta-buttons-wrap {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .float-icon { animation: float 3s ease-in-out infinite; }
-
-        .footer {
-            background: #1e2430;
-            color: #fff;
-            padding: 4rem 5% 2rem;
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 3rem;
-        }
-
-        .footer-section h3 {
-            color: #ffc400;
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-            font-weight: 700;
-        }
-
-        .footer-section ul { list-style: none; }
-        .footer-section ul li { margin-bottom: 0.5rem; }
-
-        .footer-section a {
-            color: #ccc;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-section a:hover { color: #ffc400; }
-
-        .footer-bottom {
-            text-align: center;
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: #888;
-        }
-
-        @media (max-width: 768px) {
-            .hamburger { display: flex; }
-
-            .nav-links {
-                position: fixed;
-                right: -100%;
-                top: 0;
-                flex-direction: column;
-                background: linear-gradient(135deg, #1e2430 0%, #2a3142 100%);
-                width: 280px;
-                height: 100vh;
-                text-align: left;
-                transition: right 0.3s ease;
-                box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
-                padding: 5rem 0 2rem;
-                gap: 0;
-                overflow-y: auto;
-                backdrop-filter: blur(10px);
-            }
-
-            .nav-links.active { right: 0; }
-
-            .nav-links li {
-                padding: 0;
-                border-bottom: none;
-                margin: 0.5rem 1.5rem;
-            }
-
-            .nav-links a {
-                display: block;
-                padding: 1rem 1.5rem;
-                border-radius: 8px;
-                transition: all 0.3s;
-                border-left: 3px solid transparent;
-            }
-
-            .nav-links a:hover,
-            .nav-links a.active {
-                background: rgba(255, 196, 0, 0.1);
-                border-left-color: #ffc400;
-                transform: translateX(5px);
-            }
-
-            .nav-links a.active::after { display: none; }
-
-            .nav-links.active::before {
-                content: '';
-                position: fixed;
-                top: 0; left: 0;
-                width: 100vw;
-                height: 100vh;
-                background: rgba(0, 0, 0, 0.6);
-                z-index: -1;
-                animation: fadeIn 0.3s;
-            }
-
-            @keyframes fadeIn {
-                from { opacity: 0; }
-                to { opacity: 1; }
-            }
-
-            .cta-buttons { display: none; }
-
-            .hero h1 { font-size: 2rem; line-height: 1.2; }
-            .hero { padding: 5rem 5% 4rem; }
-            .hero p { font-size: 1rem; }
-
-            .section { padding: 3rem 5%; }
-            .section-header { margin-bottom: 2rem; }
-            .section-header h2 { font-size: 1.8rem; }
-            .section-header h2::after { width: 60px; }
-            .section-header p { font-size: 1rem; }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                margin-bottom: 2rem;
-            }
-
-            .service-card { padding: 2rem; }
-            .service-icon { width: 60px; height: 60px; font-size: 1.5rem; }
-            .service-card h3 { font-size: 1.3rem; }
-            .service-card p { font-size: 1rem; }
-            .service-features li { font-size: 0.95rem; }
-
-            .cta-section { padding: 3rem 5%; }
-            .cta-content h2 { font-size: 1.8rem; }
-            .cta-content p { font-size: 1rem; }
-            .cta-buttons-wrap { flex-direction: column; }
-            .btn { width: 100%; text-align: center; }
-
-            .footer-container { grid-template-columns: 1fr; gap: 2rem; }
-            .footer { padding: 3rem 5% 2rem; }
-            .logo { font-size: 1.2rem; }
-            .logo span { font-size: 0.5rem; }
-
-            #free-tools-grid { grid-template-columns: 1fr !important; }
-        }
-
-        @media (min-width: 769px) and (max-width: 1024px) {
-            #free-tools-grid { grid-template-columns: repeat(2, 1fr) !important; }
-        }
-    </style>
+    <meta name="theme-color" content="#1e2430">
+    <link rel="preload" href="static/fonts/BricolageGrotesque.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="static/css/site.css">
+    <script>document.documentElement.className = 'js';</script>
+    <script src="static/js/site.js" defer></script>
 </head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">
-                ROGUE
-                <span>GLOBAL SOLUTIONS</span>
-            </div>
-            
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+<body id="top">
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true"><desc>Icons: Font Awesome Free 6.4.0, CC BY 4.0, https://fontawesome.com/license/free</desc><symbol id="i-arrow-right" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></symbol><symbol id="i-arrow-up" viewBox="0 0 384 512"><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></symbol><symbol id="i-circle-check" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></symbol><symbol id="i-download" viewBox="0 0 512 512"><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></symbol><symbol id="i-windows" viewBox="0 0 448 512"><path d="M0 93.7l183.6-25.3v177.4H0V93.7zm0 324.6l183.6 25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"/></symbol></svg>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <header class="site-header" id="siteHeader">
+        <nav class="nav" aria-label="Primary">
+            <a href="index.html" class="logo" aria-label="Rogue Global Solutions home">ROGUE<span>GLOBAL SOLUTIONS</span></a>
 
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">OUR CULTURE</a></li>
                 <li><a href="pricing.html">PRICING</a></li>
-                <li><a href="services.html" class="active">SERVICES</a></li>
+                <li><a href="services.html" class="active" aria-current="page">SERVICES</a></li>
                 <li><a href="industries.html">INDUSTRIES</a></li>
                 <li><a href="about.html">ABOUT US</a></li>
+                <li class="mobile-cta"><a href="contact.html">START A CONVERSATION</a></li>
             </ul>
-            
-            <div class="cta-buttons">
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contact.rogueglobalsolutions@gmail.com" target="_blank" class="btn btn-primary">START A CONVERSATION</a>
-            </div>
+
+            <a href="contact.html" class="btn btn-primary nav-cta magnetic">START A CONVERSATION <svg class="icon icon-arrow" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+
+            <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+                <span></span><span></span><span></span>
+            </button>
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>OUR SERVICES</h1>
-            <p>Three focused specializations. World-class Filipino talent delivering exceptional results across web & mobile development, video editing, and graphic design & UI/UX.</p>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="section-container">
-            <div class="section-header">
-                <h2>WHAT WE DO</h2>
-                <p>We've narrowed our focus to three core disciplines so we can deliver at the highest level — no generalists, no filler services.</p>
-            </div>
-
-            <div class="services-grid">
-
-                <!-- Card 1: Web & Mobile Development -->
-                <div class="service-card">
-                    <div class="service-icon float-icon">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <h3>Web & Mobile Development</h3>
-                    <p>Full-stack websites and cross-platform mobile apps built for performance and scale. From landing pages to complex business applications, we ship clean, production-ready code.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check-circle"></i> Frontend & backend development</li>
-                        <li><i class="fas fa-check-circle"></i> Cross-platform mobile apps</li>
-                        <li><i class="fas fa-check-circle"></i> API development & database architecture</li>
-                        <li><i class="fas fa-check-circle"></i> Performance optimization & VPS setup</li>
-                    </ul>
-                    <div class="tech-tags">
-                        <span class="tech-tag">React</span>
-                        <span class="tech-tag">React Native</span>
-                        <span class="tech-tag">Node.js</span>
-                        <span class="tech-tag">Next.js</span>
-                        <span class="tech-tag">REST APIs</span>
-                    </div>
+    <main id="main">
+        <section class="hero">
+            <svg class="hero-ring" viewBox="0 0 100 100" aria-hidden="true"><circle class="ring-outer" cx="50" cy="50" r="49.5" pathLength="1"/><circle class="ring-inner" cx="50" cy="50" r="38" pathLength="1"/></svg>
+            <div class="container hero-grid">
+                <div>
+                    <p class="kicker" data-reveal>3 Core Specializations</p>
+                    <h1 data-split>OUR <span class="accent">SERVICES</span></h1>
+                    <p class="hero-lead" data-reveal style="--delay: 400ms">Three focused disciplines, delivered by world-class Filipino talent. No generalists, no filler services.</p>
                 </div>
-
-                <!-- Card 2: Video Editing -->
-                <div class="service-card">
-                    <div class="service-icon float-icon">
-                        <i class="fas fa-film"></i>
-                    </div>
-                    <h3>Video Editing</h3>
-                    <p>From raw footage to polished content — corporate videos, social media reels, YouTube productions, and motion graphics. We deliver fast turnarounds without compromising quality.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check-circle"></i> Corporate & brand video production</li>
-                        <li><i class="fas fa-check-circle"></i> Social media & short-form content</li>
-                        <li><i class="fas fa-check-circle"></i> Motion graphics & animation</li>
-                        <li><i class="fas fa-check-circle"></i> Multiple format exports & revisions</li>
-                    </ul>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Premiere Pro</span>
-                        <span class="tech-tag">After Effects</span>
-                        <span class="tech-tag">DaVinci Resolve</span>
-                        <span class="tech-tag">Motion Graphics</span>
-                    </div>
-                </div>
-
-                <!-- Card 3: Graphic Design & UI/UX -->
-                <div class="service-card">
-                    <div class="service-icon float-icon">
-                        <i class="fas fa-pen-ruler"></i>
-                    </div>
-                    <h3>Graphic Design & UI/UX</h3>
-                    <p>Brand identities, UI systems, and digital visuals crafted for clarity and impact. We design experiences that look great and actually work for your users.</p>
-                    <ul class="service-features">
-                        <li><i class="fas fa-check-circle"></i> Brand identity & logo design</li>
-                        <li><i class="fas fa-check-circle"></i> UI/UX design & prototyping</li>
-                        <li><i class="fas fa-check-circle"></i> Mobile & web app design</li>
-                        <li><i class="fas fa-check-circle"></i> Social media & marketing visuals</li>
-                    </ul>
-                    <div class="tech-tags">
-                        <span class="tech-tag">Figma</span>
-                        <span class="tech-tag">Adobe XD</span>
-                        <span class="tech-tag">Illustrator</span>
-                        <span class="tech-tag">Photoshop</span>
-                        <span class="tech-tag">Prototyping</span>
-                    </div>
-                </div>
-
+                <ul class="hero-index" data-stagger>
+                    <li><a href="#web"><span>01</span>Web &amp; mobile development</a></li>
+                    <li><a href="#video"><span>02</span>Video editing</a></li>
+                    <li><a href="#design"><span>03</span>Graphic design &amp; UI/UX</a></li>
+                    <li><a href="#free-tools"><span>+</span>Free tools</a></li>
+                </ul>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="cta-section">
-        <div class="cta-content">
-            <h2>READY TO BUILD YOUR TEAM?</h2>
-            <p>Let's discuss how our world-class Filipino talent can help scale your business. Our team is ready to respond and create a customized solution for your needs.</p>
-            <div class="cta-buttons-wrap">
-                <a href="pricing.html" class="btn btn-outline">VIEW PRICING</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- FREE TOOLS SECTION -->
-    <section class="section section-alt" id="free-tools">
-        <div class="section-container">
-            <div class="section-header">
-                <h2>FREE TOOLS</h2>
-                <p>We build free software for the people we work with. No strings attached — just tools made with care for the WFH community.</p>
-            </div>
-
-            <div class="services-grid" style="grid-template-columns: repeat(3, 1fr);" id="free-tools-grid">
-                <div class="service-card" style="
-                    background: linear-gradient(145deg, #0d1f35 0%, #1a3a55 60%, #0d2a42 100%);
-                    border: 1px solid rgba(68, 187, 229, 0.25);
-                    position: relative;
-                    overflow: hidden;
-                ">
-                    <div style="
-                        position: absolute; width: 180px; height: 180px;
-                        background: radial-gradient(circle, rgba(68,187,229,0.15) 0%, transparent 70%);
-                        top: -40px; right: -40px; pointer-events: none;
-                    "></div>
-                    <div style="
-                        position: absolute; width: 120px; height: 120px;
-                        background: radial-gradient(circle, rgba(255,205,51,0.08) 0%, transparent 70%);
-                        bottom: 40px; left: -20px; pointer-events: none;
-                    "></div>
-
-                    <div style="
-                        position: absolute; top: 18px; right: 18px;
-                        background: linear-gradient(135deg, #ffc400, #d4a800);
-                        color: #1e2430; font-size: 0.65rem; font-weight: 800;
-                        letter-spacing: 1.5px; padding: 4px 10px;
-                        border-radius: 20px; text-transform: uppercase;
-                    ">FREE</div>
-
-                    <div class="service-icon float-icon" style="
-                        background: linear-gradient(135deg, #1a6a90, #44bbe5);
-                        box-shadow: 0 8px 24px rgba(68,187,229,0.4);
-                        position: relative; z-index: 1;
-                    ">
-                        <i class="fas fa-droplet"></i>
+        <section class="section">
+            <div class="container">
+                <article class="service-row" id="web">
+                    <div class="service-copy" data-reveal="left">
+                        <span class="service-num">01</span>
+                        <h2>Web &amp; mobile development</h2>
+                        <p>Full-stack websites and cross-platform mobile apps built for performance and scale. From landing pages to complex business applications, we ship clean, production-ready code.</p>
                     </div>
-
-                    <h3 style="color: #ffffff; position: relative; z-index: 1;">Rogue Water Reminder</h3>
-
-                    <p style="color: #a0b8cc; position: relative; z-index: 1;">
-                        A free hydration tracker for WFH individuals. Reminds you every hour to drink water during your workday — lightweight, offline, and no data collected.
-                    </p>
-
-                    <ul class="service-features" style="position: relative; z-index: 1;">
-                        <li style="border-bottom-color: rgba(255,255,255,0.07); color: #c8d8e8;">
-                            <i class="fas fa-check-circle" style="color: #44bbe5;"></i> Hourly reminders with sound
-                        </li>
-                        <li style="border-bottom-color: rgba(255,255,255,0.07); color: #c8d8e8;">
-                            <i class="fas fa-check-circle" style="color: #44bbe5;"></i> Animated water progress tracker
-                        </li>
-                        <li style="border-bottom-color: rgba(255,255,255,0.07); color: #c8d8e8;">
-                            <i class="fas fa-check-circle" style="color: #44bbe5;"></i> Runs quietly in the system tray
-                        </li>
-                        <li style="border-bottom-color: rgba(255,255,255,0.07); color: #c8d8e8;">
-                            <i class="fas fa-check-circle" style="color: #44bbe5;"></i> 100% free — no data collected
-                        </li>
-                    </ul>
-
-                    <div style="margin-top: 1.8rem; position: relative; z-index: 1;">
-                        <div style="display: flex; align-items: center; gap: 6px; color: #6a8a9a; font-size: 0.78rem; margin-bottom: 0.7rem;">
-                            <i class="fab fa-windows"></i> Windows &nbsp;·&nbsp; v1.0
+                    <div class="service-detail" data-reveal="right">
+                        <ul class="feature-list">
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-circle-check"></use></svg> Frontend &amp; backend development</li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-circle-check"></use></svg> Cross-platform mobile apps</li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-circle-check"></use></svg> API development &amp; database architecture</li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-circle-check"></use></svg> Performance optimization &amp; VPS setup</li>
+                        </ul>
+                        <div class="tags">
+                            <span class="tag">React</span>
+                            <span class="tag">React Native</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">Next.js</span>
+                            <span class="tag">REST APIs</span>
                         </div>
-                        <a href="https://mega.nz/folder/2kAjhDwC#fLu2aq4tFUWDLuMTUNG6yA"
-                           target="_blank"
-                           class="btn btn-primary"
-                           style="display: block; text-align: center; border-radius: 8px;">
-                            <i class="fas fa-download" style="margin-right: 6px;"></i> Download Free
-                        </a>
+                    </div>
+                </article>
+
+                <article class="service-row" id="video">
+                    <div class="service-copy" data-reveal="left">
+                        <span class="service-num">02</span>
+                        <h2>Video editing</h2>
+                        <p>From raw footage to polished content: corporate videos, social media reels, YouTube productions, and motion graphics. Fast turnarounds without compromising quality.</p>
+                    </div>
+                    <div class="service-detail" data-reveal="right">
+                        <ul class="feature-list">
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-circle-check"></use></svg> Corporate &amp; brand video production</li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-circle-check"></use></svg> Social media &amp; short-form content</li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-circle-check"></use></svg> Motion graphics &amp; animation</li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-circle-check"></use></svg> Multiple format exports &amp; revisions</li>
+                        </ul>
+                        <div class="tags">
+                            <span class="tag">Premiere Pro</span>
+                            <span class="tag">After Effects</span>
+                            <span class="tag">DaVinci Resolve</span>
+                            <span class="tag">Motion Graphics</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="service-row" id="design">
+                    <div class="service-copy" data-reveal="left">
+                        <span class="service-num">03</span>
+                        <h2>Graphic design &amp; UI/UX</h2>
+                        <p>Brand identities, UI systems, and digital visuals crafted for clarity and impact. We design experiences that look great and actually work for your users.</p>
+                    </div>
+                    <div class="service-detail" data-reveal="right">
+                        <ul class="feature-list">
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-circle-check"></use></svg> Brand identity &amp; logo design</li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-circle-check"></use></svg> UI/UX design &amp; prototyping</li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-circle-check"></use></svg> Mobile &amp; web app design</li>
+                            <li><svg class="icon" aria-hidden="true"><use href="#i-circle-check"></use></svg> Social media &amp; marketing visuals</li>
+                        </ul>
+                        <div class="tags">
+                            <span class="tag">Figma</span>
+                            <span class="tag">Adobe XD</span>
+                            <span class="tag">Illustrator</span>
+                            <span class="tag">Photoshop</span>
+                            <span class="tag">Prototyping</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section class="cta-band">
+            <div class="container">
+                <h2 data-split>Not sure which service you need?</h2>
+                <div data-reveal>
+                    <p>Tell us about your project and we'll recommend the right mix of developers, editors, and designers.</p>
+                    <div class="hero-actions">
+                        <a href="contact.html" class="btn btn-dark magnetic">START A CONVERSATION <svg class="icon icon-arrow" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+                        <a href="pricing.html" class="text-link">View pricing <svg class="icon icon-arrow" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <p style="text-align: center; color: #aaa; font-size: 0.9rem; margin-top: -1rem;">
-                More free tools coming soon. Built by the Rogue team, for the WFH community.
-            </p>
-        </div>
-    </section>
+        <section class="section section-alt" id="free-tools">
+            <div class="container">
+                <div class="section-head section-head--split" data-reveal>
+                    <h2 class="section-title">Free tools</h2>
+                    <p class="lead">We build free software for the people we work with. No strings attached, just tools made with care for the WFH community.</p>
+                </div>
+
+                <article class="tool-showcase" data-reveal="scale">
+                    <div>
+                        <span class="tool-badge">FREE</span>
+                        <h3>Rogue Water Reminder</h3>
+                        <p>A free hydration tracker for people who work from home. It reminds you every hour to drink water during your workday. Lightweight, works offline, and collects no data.</p>
+                        <div class="tool-meta"><svg class="icon" aria-hidden="true"><use href="#i-windows"></use></svg> Windows · v1.0</div>
+                        <a href="https://mega.nz/folder/2kAjhDwC#fLu2aq4tFUWDLuMTUNG6yA" target="_blank" rel="noopener" class="btn btn-primary magnetic"><svg class="icon" aria-hidden="true"><use href="#i-download"></use></svg> DOWNLOAD FREE</a>
+                    </div>
+                    <ul class="feature-list">
+                        <li><svg class="icon" aria-hidden="true"><use href="#i-circle-check"></use></svg> Hourly reminders with sound</li>
+                        <li><svg class="icon" aria-hidden="true"><use href="#i-circle-check"></use></svg> Animated water progress tracker</li>
+                        <li><svg class="icon" aria-hidden="true"><use href="#i-circle-check"></use></svg> Runs quietly in the system tray</li>
+                        <li><svg class="icon" aria-hidden="true"><use href="#i-circle-check"></use></svg> 100% free, no data collected</li>
+                    </ul>
+                </article>
+
+                <p class="footnote">More free tools coming soon. Built by the Rogue team, for the WFH community.</p>
+            </div>
+        </section>
+
+    </main>
 
     <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>ROGUE GLOBAL SOLUTIONS</h3>
-                <p style="color: #ccc; margin-bottom: 1rem;">Creative & Tech Manpower Outsourcing</p>
-                <p style="color: #888; font-size: 0.9rem;">Global Headquarters</p>
+        <div class="container">
+            <div class="footer-grid" data-stagger>
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" aria-label="Rogue Global Solutions home">ROGUE<span>GLOBAL SOLUTIONS</span></a>
+                    <p>Creative &amp; Tech Manpower Outsourcing</p>
+                    <small>Global Headquarters · Manila, Philippines</small>
+                </div>
+                <div>
+                    <h3>OUR SERVICES</h3>
+                    <ul>
+                        <li><a href="services.html#web">Web Development</a></li>
+                        <li><a href="services.html#web">Mobile App Development</a></li>
+                        <li><a href="services.html#video">Video Editing</a></li>
+                        <li><a href="services.html#design">Graphic Design &amp; UI/UX</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>COMPANY</h3>
+                    <ul>
+                        <li><a href="index.html">Our Culture</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Start a Conversation</a></li>
+                    </ul>
+                </div>
+                    <div>
+                        <h3>AREAS WE SERVE</h3>
+                        <ul>
+                            <li>North America</li>
+                            <li>Europe</li>
+                            <li>Asia Pacific</li>
+                            <li>Global Support</li>
+                        </ul>
+                    </div>
             </div>
-            <div class="footer-section">
-                <h3>OUR SERVICES</h3>
-                <ul>
-                    <li><a href="services.html">Web Development</a></li>
-                    <li><a href="services.html">Mobile App Development</a></li>
-                    <li><a href="services.html">Video Editing</a></li>
-                    <li><a href="services.html">Graphic Design & UI/UX</a></li>
-                </ul>
+
+            <div class="footer-wordmark" aria-hidden="true">ROGUE</div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Rogue Global Solutions. All rights reserved.</p>
+                <nav aria-label="Legal">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="#top">Back to top <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg></a>
+                </nav>
             </div>
-            <div class="footer-section">
-                <h3>COMPANY</h3>
-                <ul>
-                    <li><a href="index.html">Our Culture</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="#contact">Start a Conversation</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>AREAS WE SERVICE</h3>
-                <ul>
-                    <li><a href="#">North America</a></li>
-                    <li><a href="#">Europe</a></li>
-                    <li><a href="#">Asia Pacific</a></li>
-                    <li><a href="#">Global Support</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>Rogue Global Solutions © 2026 All Rights reserved. | Privacy Policy | Terms | Payments</p>
         </div>
     </footer>
-
-    <script>
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
-        const body = document.body;
-
-        hamburger.addEventListener('click', (e) => {
-            e.stopPropagation();
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-            if (navLinks.classList.contains('active')) {
-                body.style.overflow = 'hidden';
-            } else {
-                body.style.overflow = '';
-            }
-        });
-
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-                body.style.overflow = '';
-            });
-        });
-
-        navLinks.addEventListener('click', (e) => {
-            if (e.target === navLinks) {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-                body.style.overflow = '';
-            }
-        });
-    </script>
 </body>
 </html>

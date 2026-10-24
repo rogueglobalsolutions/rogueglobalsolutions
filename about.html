@@ -1,18 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://rogueglobalsolutions.tech/about.html">
 
-    <title>About Us - Rogue Global Solutions | Web, Mobile & Creative Outsourcing</title>
+    <title>About Us | Rogue Global Solutions</title>
     <meta name="description" content="Learn about Rogue Global Solutions - 100% Filipino owned, 5+ years experience, specializing in Web & Mobile Development, Video Editing, and Graphic Design/UI/UX.">
     <meta name="keywords" content="about rogue global solutions, Filipino owned business, web development outsourcing, mobile app development, video editing, graphic design, UI/UX, remote talent">
 
-    <meta property="og:title" content="About Us - Rogue Global Solutions | Web, Mobile & Creative Outsourcing">
+    <meta property="og:title" content="About Us | Rogue Global Solutions">
     <meta property="og:description" content="100% Filipino owned, 5+ years experience, specializing in Web & Mobile Development, Video Editing, and Graphic Design/UI/UX.">
-    <meta property="og:image" content="https://rogueglobalsolutions.tech/static/images/logo.png">
+    <meta property="og:image" content="https://rogueglobalsolutions.tech/static/images/og-card.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
     <meta property="og:url" content="https://rogueglobalsolutions.tech/about.html">
+    <meta name="twitter:card" content="summary_large_image">
     <meta property="og:type" content="website">
 
     <link rel="icon" type="image/png" href="/static/images/logo.png">
@@ -60,1087 +63,177 @@
     }
     </script>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
-
-    body {
-        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-        line-height: 1.6;
-        color: #333;
-        overflow-x: hidden;
-    }
-
-    header {
-        background: #1e2430;
-        padding: 1rem 5%;
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1400px;
-        margin: 0 auto;
-    }
-
-    .logo {
-        font-size: 1.5rem;
-        font-weight: 900;
-        color: #ffffff;
-        letter-spacing: 2px;
-        z-index: 1001;
-    }
-
-    .logo span {
-        color: #1ea7d9;
-        display: block;
-        font-size: 0.6rem;
-        letter-spacing: 4px;
-        font-weight: 600;
-    }
-
-    /* Hamburger Menu */
-    .hamburger {
-        display: none;
-        flex-direction: column;
-        cursor: pointer;
-        gap: 6px;
-        z-index: 1001;
-        padding: 10px;
-        border-radius: 8px;
-        transition: background 0.3s;
-    }
-
-    .hamburger:hover {
-        background: rgba(255, 196, 0, 0.1);
-    }
-
-    .hamburger span {
-        width: 28px;
-        height: 3px;
-        background: #fff;
-        transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-        border-radius: 3px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg) translate(9px, 9px);
-        background: #ffc400;
-    }
-
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
-        transform: translateX(-20px);
-    }
-
-    .hamburger.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(9px, -9px);
-        background: #ffc400;
-    }
-
-    .nav-links {
-        display: flex;
-        gap: 2rem;
-        list-style: none;
-    }
-
-    .nav-links a {
-        color: #fff;
-        text-decoration: none;
-        font-weight: 500;
-        transition: color 0.3s;
-        position: relative;
-    }
-
-    .nav-links a:hover {
-        color: #ffc400;
-    }
-
-    .nav-links a.active {
-        color: #ffc400;
-    }
-
-    .nav-links a.active::after {
-        content: '';
-        position: absolute;
-        bottom: -1.2rem;
-        left: 0;
-        right: 0;
-        height: 3px;
-        background: #ffc400;
-    }
-
-    .cta-buttons {
-        display: flex;
-        gap: 1rem;
-    }
-
-    .btn {
-        padding: 0.7rem 1.5rem;
-        border: none;
-        cursor: pointer;
-        font-weight: 600;
-        transition: all 0.3s;
-        text-decoration: none;
-        display: inline-block;
-        border-radius: 4px;
-    }
-
-    .btn-outline {
-        background: transparent;
-        border: 2px solid #1ea7d9;
-        color: #1ea7d9;
-    }
-
-    .btn-outline:hover {
-        background: #1ea7d9;
-        color: #fff;
-    }
-
-    .btn-primary {
-        background: #ffc400;
-        color: #1e2430;
-        box-shadow: 0 4px 15px rgba(255, 196, 0, 0.3);
-    }
-
-    .btn-primary:hover {
-        background: #ffcd33;
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(255, 196, 0, 0.5);
-    }
-
-    .hero {
-        background: #1e2430;
-        color: #fff;
-        padding: 8rem 5% 6rem;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-    }
-
-    .hero::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: 
-            radial-gradient(circle at 20% 50%, rgba(30, 167, 217, 0.15) 0%, transparent 50%),
-            radial-gradient(circle at 80% 80%, rgba(255, 196, 0, 0.1) 0%, transparent 50%);
-    }
-
-    .hero-content {
-        max-width: 900px;
-        margin: 0 auto;
-        position: relative;
-        z-index: 1;
-    }
-
-    .hero h1 {
-        font-size: 3.5rem;
-        margin-bottom: 1.5rem;
-        font-weight: 800;
-        letter-spacing: -1px;
-        text-shadow: 0 2px 20px rgba(0,0,0,0.3);
-    }
-
-    .hero h1::after {
-        content: '';
-        display: block;
-        width: 150px;
-        height: 4px;
-        background: #ffc400;
-        margin: 1rem auto;
-        box-shadow: 0 0 20px rgba(255, 196, 0, 0.5);
-    }
-
-    .hero p {
-        font-size: 1.2rem;
-        color: #ccc;
-        max-width: 700px;
-        margin: 0 auto;
-        line-height: 1.8;
-    }
-
-    .section {
-        padding: 5rem 5%;
-    }
-
-    .section-alt {
-        background: #f8f9fa;
-    }
-
-    .section-container {
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .section h2 {
-        font-size: 2.5rem;
-        margin-bottom: 2rem;
-        color: #1e2430;
-        font-weight: 700;
-        text-align: center;
-    }
-
-    .section h2::after {
-        content: '';
-        display: block;
-        width: 100px;
-        height: 3px;
-        background: #ffc400;
-        margin: 1rem auto;
-    }
-
-    .mission-vision {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 3rem;
-        margin-bottom: 4rem;
-    }
-
-    .mission-box, .vision-box {
-        background: #fff;
-        padding: 3rem;
-        border-radius: 16px;
-        box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-        border-top: 4px solid #1ea7d9;
-        transition: transform 0.3s;
-    }
-
-    .mission-box:hover, .vision-box:hover {
-        transform: translateY(-10px);
-    }
-
-    .mission-box h3, .vision-box h3 {
-        font-size: 1.8rem;
-        color: #1ea7d9;
-        margin-bottom: 1rem;
-        font-weight: 700;
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-    }
-
-    .mission-box h3 i, .vision-box h3 i {
-        font-size: 2rem;
-    }
-
-    .mission-box p, .vision-box p {
-        color: #555;
-        line-height: 1.8;
-        font-size: 1.05rem;
-    }
-
-    .leadership-section {
-        margin-top: 4rem;
-    }
-
-    .leadership-intro {
-        text-align: center;
-        max-width: 800px;
-        margin: 0 auto 4rem;
-    }
-
-    .leadership-intro p {
-        font-size: 1.1rem;
-        color: #555;
-        line-height: 1.8;
-    }
-
-    .leaders-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 3rem;
-        margin-bottom: 4rem;
-    }
-
-    .leader-card {
-        background: #fff;
-        border-radius: 16px;
-        overflow: hidden;
-        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-        transition: all 0.3s;
-    }
-
-    .leader-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 20px 60px rgba(30, 167, 217, 0.2);
-    }
-
-    .leader-image {
-        width: 100%;
-        height: 350px;
-        background: linear-gradient(135deg, #1ea7d9 0%, #ffc400 100%);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 8rem;
-        color: rgba(255,255,255,0.3);
-        position: relative;
-        overflow: hidden;
-    }
-
-    .leader-image i {
-        position: relative;
-        z-index: 1;
-    }
-
-    .leader-image::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: 
-            radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
-            radial-gradient(circle at 70% 80%, rgba(0,0,0,0.1) 0%, transparent 50%);
-    }
-
-    .leader-content {
-        padding: 2.5rem;
-    }
-
-    .leader-title {
-        display: inline-block;
-        background: #ffc400;
-        color: #1e2430;
-        padding: 0.4rem 1rem;
-        border-radius: 20px;
-        font-size: 0.85rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        margin-bottom: 1rem;
-    }
-
-    .leader-name {
-        font-size: 2rem;
-        color: #1e2430;
-        margin-bottom: 1rem;
-        font-weight: 800;
-    }
-
-    .leader-bio {
-        color: #666;
-        line-height: 1.8;
-        margin-bottom: 1.5rem;
-    }
-
-    .leader-highlights {
-        background: #f8f9fa;
-        padding: 1.5rem;
-        border-radius: 12px;
-        border-left: 4px solid #1ea7d9;
-    }
-
-    .leader-highlights h4 {
-        color: #1e2430;
-        font-size: 1rem;
-        margin-bottom: 0.8rem;
-        font-weight: 700;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-
-    .leader-highlights h4 i {
-        color: #1ea7d9;
-    }
-
-    .leader-highlights ul {
-        list-style: none;
-        padding: 0;
-    }
-
-    .leader-highlights li {
-        color: #555;
-        padding: 0.4rem 0;
-        padding-left: 1.5rem;
-        position: relative;
-    }
-
-    .leader-highlights li::before {
-        content: "\f054";
-        font-family: "Font Awesome 6 Free";
-        font-weight: 900;
-        position: absolute;
-        left: 0;
-        color: #1ea7d9;
-    }
-
-    .values-section {
-        background: #1e2430;
-        color: #fff;
-        padding: 5rem 5%;
-    }
-
-    .values-section h2 {
-        color: #fff;
-    }
-
-    .values-grid {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        gap: 2rem;
-        max-width: 1200px;
-        margin: 0 auto;
-    }
-
-    .value-card {
-        text-align: center;
-        padding: 2rem 1rem;
-        background: rgba(255,255,255,0.05);
-        border-radius: 12px;
-        transition: all 0.3s;
-        border: 2px solid transparent;
-    }
-
-    .value-card:hover {
-        background: rgba(255,255,255,0.1);
-        border-color: #ffc400;
-        transform: translateY(-10px);
-    }
-
-    .value-icon {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-        color: #1ea7d9;
-    }
-
-    .value-card h3 {
-        font-size: 1.1rem;
-        margin-bottom: 0.5rem;
-        font-weight: 700;
-        color: #ffc400;
-    }
-
-    .value-card p {
-        font-size: 0.9rem;
-        color: #ccc;
-    }
-
-    .timeline-section {
-        margin-top: 4rem;
-    }
-
-    .timeline {
-        position: relative;
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 2rem 0;
-    }
-
-    .timeline::before {
-        content: '';
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 4px;
-        height: 100%;
-        background: #1ea7d9;
-        opacity: 0.3;
-    }
-
-    .timeline-item {
-        display: flex;
-        justify-content: space-between;
-        margin-bottom: 3rem;
-        position: relative;
-    }
-
-    .timeline-item:nth-child(odd) {
-        flex-direction: row-reverse;
-    }
-
-    .timeline-content {
-        width: 45%;
-        background: #fff;
-        padding: 2rem;
-        border-radius: 12px;
-        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-        border-left: 4px solid #1ea7d9;
-    }
-
-    .timeline-year {
-        font-size: 1.5rem;
-        color: #1ea7d9;
-        font-weight: 800;
-        margin-bottom: 0.5rem;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-
-    .timeline-year i {
-        font-size: 1.3rem;
-    }
-
-    .timeline-content h4 {
-        color: #1e2430;
-        font-size: 1.2rem;
-        margin-bottom: 0.5rem;
-        font-weight: 700;
-    }
-
-    .timeline-content p {
-        color: #666;
-        line-height: 1.6;
-    }
-
-    .timeline-marker {
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 20px;
-        height: 20px;
-        background: #ffc400;
-        border-radius: 50%;
-        border: 4px solid #fff;
-        box-shadow: 0 0 0 4px #1ea7d9;
-    }
-
-    .contact-section {
-        background: #f8f9fa;
-        padding: 5rem 5%;
-        text-align: center;
-    }
-
-    .contact-info {
-        max-width: 600px;
-        margin: 2rem auto;
-        background: #fff;
-        padding: 3rem;
-        border-radius: 16px;
-        box-shadow: 0 10px 40px rgba(0,0,0,0.08);
-    }
-
-    .contact-item {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-        gap: 1rem;
-        margin: 1.5rem 0;
-        font-size: 1.1rem;
-    }
-
-    .contact-item i {
-        color: #1ea7d9;
-        font-size: 1.5rem;
-    }
-
-    .contact-item a {
-        color: #333;
-        text-decoration: none;
-        transition: color 0.3s;
-    }
-
-    .contact-item a:hover {
-        color: #1ea7d9;
-    }
-
-    .footer {
-        background: #1e2430;
-        color: #fff;
-        padding: 4rem 5% 2rem;
-    }
-
-    .footer-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 3rem;
-    }
-
-    .footer-section h3 {
-        color: #ffc400;
-        margin-bottom: 1rem;
-        font-size: 1.2rem;
-        font-weight: 700;
-    }
-
-    .footer-section ul {
-        list-style: none;
-    }
-
-    .footer-section ul li {
-        margin-bottom: 0.5rem;
-    }
-
-    .footer-section a {
-        color: #ccc;
-        text-decoration: none;
-        transition: color 0.3s;
-    }
-
-    .footer-section a:hover {
-        color: #ffc400;
-    }
-
-    .footer-bottom {
-        text-align: center;
-        margin-top: 3rem;
-        padding-top: 2rem;
-        border-top: 1px solid rgba(255,255,255,0.1);
-        color: #888;
-    }
-
-    /* Mobile Responsive */
-    @media (max-width: 768px) {
-        .hamburger {
-            display: flex;
-        }
-
-        .nav-links {
-            position: fixed;
-            right: -100%;
-            top: 0;
-            flex-direction: column;
-            background: linear-gradient(135deg, #1e2430 0%, #2a3142 100%);
-            width: 280px;
-            height: 100vh;
-            text-align: left;
-            transition: right 0.3s ease;
-            box-shadow: -5px 0 30px rgba(0, 0, 0, 0.5);
-            padding: 5rem 0 2rem;
-            gap: 0;
-            overflow-y: auto;
-            backdrop-filter: blur(10px);
-        }
-
-        .nav-links.active {
-            right: 0;
-        }
-
-        .nav-links li {
-            padding: 0;
-            border-bottom: none;
-            margin: 0.5rem 1.5rem;
-        }
-
-        .nav-links a {
-            display: block;
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            transition: all 0.3s;
-            border-left: 3px solid transparent;
-        }
-
-        .nav-links a:hover,
-        .nav-links a.active {
-            background: rgba(255, 196, 0, 0.1);
-            border-left-color: #ffc400;
-            transform: translateX(5px);
-        }
-
-        .nav-links a.active::after {
-            display: none;
-        }
-
-        /* Mobile overlay */
-        .nav-links.active::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(0, 0, 0, 0.6);
-            z-index: -1;
-            animation: fadeIn 0.3s;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-
-        .cta-buttons {
-            display: none;
-        }
-
-        .hero h1 {
-            font-size: 2rem;
-            line-height: 1.2;
-        }
-
-        .hero {
-            padding: 5rem 5% 4rem;
-        }
-
-        .hero p {
-            font-size: 1rem;
-        }
-
-        .section {
-            padding: 3rem 5%;
-        }
-
-        .section h2 {
-            font-size: 1.8rem;
-        }
-
-        .section h2::after {
-            width: 80px;
-        }
-
-        .mission-vision {
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .mission-box, .vision-box {
-            padding: 2rem;
-        }
-
-        .mission-box h3, .vision-box h3 {
-            font-size: 1.5rem;
-            flex-direction: column;
-            text-align: center;
-        }
-
-        .mission-box h3 i, .vision-box h3 i {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .mission-box p, .vision-box p {
-            font-size: 1rem;
-        }
-
-        .leadership-intro {
-            margin-bottom: 2rem;
-        }
-
-        .leadership-intro p {
-            font-size: 1rem;
-        }
-
-        .leaders-grid {
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        .leader-image {
-            height: 250px;
-            font-size: 5rem;
-        }
-
-        .leader-content {
-            padding: 2rem;
-        }
-
-        .leader-name {
-            font-size: 1.5rem;
-        }
-
-        .leader-bio {
-            font-size: 1rem;
-        }
-
-        .leader-highlights {
-            padding: 1.2rem;
-        }
-
-        .leader-highlights li {
-            font-size: 0.95rem;
-        }
-
-        .values-section {
-            padding: 3rem 5%;
-        }
-
-        .values-grid {
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-        }
-
-        .value-card {
-            padding: 1.5rem;
-        }
-
-        .value-icon {
-            font-size: 2rem;
-        }
-
-        .timeline::before {
-            left: 20px;
-        }
-
-        .timeline-item {
-            flex-direction: column !important;
-        }
-
-        .timeline-content {
-            width: 100%;
-            margin-left: 40px;
-        }
-
-        .timeline-marker {
-            left: 20px;
-        }
-
-        .contact-section {
-            padding: 3rem 5%;
-        }
-
-        .contact-info {
-            padding: 2rem;
-        }
-
-        .contact-item {
-            font-size: 1rem;
-            flex-direction: column;
-            text-align: center;
-        }
-
-        .contact-item a {
-            word-break: break-all;
-        }
-
-        .footer-container {
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-
-        .footer {
-            padding: 3rem 5% 2rem;
-        }
-
-        .logo {
-            font-size: 1.2rem;
-        }
-
-        .logo span {
-            font-size: 0.5rem;
-        }
-    }
-    </style>
+    <meta name="theme-color" content="#1e2430">
+    <link rel="preload" href="static/fonts/BricolageGrotesque.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="static/css/site.css">
+    <script>document.documentElement.className = 'js';</script>
+    <script src="static/js/site.js" defer></script>
 </head>
-<body>
-<header>
-        <nav>
-            <div class="logo">
-                ROGUE
-                <span>GLOBAL SOLUTIONS</span>
-            </div>
-            
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+<body id="top">
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true"><desc>Icons: Font Awesome Free 6.4.0, CC BY 4.0, https://fontawesome.com/license/free</desc><symbol id="i-arrow-right" viewBox="0 0 448 512"><path d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"/></symbol><symbol id="i-arrow-up" viewBox="0 0 384 512"><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></symbol><symbol id="i-bullseye" viewBox="0 0 512 512"><path d="M448 256A192 192 0 1 0 64 256a192 192 0 1 0 384 0zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 80a80 80 0 1 0 0-160 80 80 0 1 0 0 160zm0-224a144 144 0 1 1 0 288 144 144 0 1 1 0-288zM224 256a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z"/></symbol><symbol id="i-chart-line" viewBox="0 0 512 512"><path d="M64 64c0-17.7-14.3-32-32-32S0 46.3 0 64V400c0 44.2 35.8 80 80 80H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H80c-8.8 0-16-7.2-16-16V64zm406.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L320 210.7l-57.4-57.4c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L240 221.3l57.4 57.4c12.5 12.5 32.8 12.5 45.3 0l128-128z"/></symbol><symbol id="i-circle-check" viewBox="0 0 512 512"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></symbol><symbol id="i-handshake" viewBox="0 0 640 512"><path d="M323.4 85.2l-96.8 78.4c-16.1 13-19.2 36.4-7 53.1c12.9 17.8 38 21.3 55.3 7.8l99.3-77.2c7-5.4 17-4.2 22.5 2.8s4.2 17-2.8 22.5l-20.9 16.2L512 316.8V128h-.7l-3.9-2.5L434.8 79c-15.3-9.8-33.2-15-51.4-15c-21.8 0-43 7.5-60 21.2zm22.8 124.4l-51.7 40.2C263 274.4 217.3 268 193.7 235.6c-22.2-30.5-16.6-73.1 12.7-96.8l83.2-67.3c-11.6-4.9-24.1-7.4-36.8-7.4C234 64 215.7 69.6 200 80l-72 48V352h28.2l91.4 83.4c19.6 17.9 49.9 16.5 67.8-3.1c5.5-6.1 9.2-13.2 11.1-20.6l17 15.6c19.5 17.9 49.9 16.6 67.8-2.9c4.5-4.9 7.8-10.6 9.9-16.5c19.4 13 45.8 10.3 62.1-7.5c17.9-19.5 16.6-49.9-2.9-67.8l-134.2-123zM16 128c-8.8 0-16 7.2-16 16V352c0 17.7 14.3 32 32 32H64c17.7 0 32-14.3 32-32V128H16zM48 320a16 16 0 1 1 0 32 16 16 0 1 1 0-32zM544 128V352c0 17.7 14.3 32 32 32h32c17.7 0 32-14.3 32-32V144c0-8.8-7.2-16-16-16H544zm32 208a16 16 0 1 1 32 0 16 16 0 1 1 -32 0z"/></symbol><symbol id="i-lightbulb" viewBox="0 0 384 512"><path d="M272 384c9.6-31.9 29.5-59.1 49.2-86.2l0 0c5.2-7.1 10.4-14.2 15.4-21.4c19.8-28.5 31.4-63 31.4-100.3C368 78.8 289.2 0 192 0S16 78.8 16 176c0 37.3 11.6 71.9 31.4 100.3c5 7.2 10.2 14.3 15.4 21.4l0 0c19.8 27.1 39.7 54.4 49.2 86.2H272zM192 512c44.2 0 80-35.8 80-80V416H112v16c0 44.2 35.8 80 80 80zM112 176c0 8.8-7.2 16-16 16s-16-7.2-16-16c0-61.9 50.1-112 112-112c8.8 0 16 7.2 16 16s-7.2 16-16 16c-44.2 0-80 35.8-80 80z"/></symbol><symbol id="i-rocket" viewBox="0 0 512 512"><path d="M156.6 384.9L125.7 354c-8.5-8.5-11.5-20.8-7.7-32.2c3-8.9 7-20.5 11.8-33.8L24 288c-8.6 0-16.6-4.6-20.9-12.1s-4.2-16.7 .2-24.1l52.5-88.5c13-21.9 36.5-35.3 61.9-35.3l82.3 0c2.4-4 4.8-7.7 7.2-11.3C289.1-4.1 411.1-8.1 483.9 5.3c11.6 2.1 20.6 11.2 22.8 22.8c13.4 72.9 9.3 194.8-111.4 276.7c-3.5 2.4-7.3 4.8-11.3 7.2v82.3c0 25.4-13.4 49-35.3 61.9l-88.5 52.5c-7.4 4.4-16.6 4.5-24.1 .2s-12.1-12.2-12.1-20.9V380.8c-14.1 4.9-26.4 8.9-35.7 11.9c-11.2 3.6-23.4 .5-31.8-7.8zM384 168a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"/></symbol><symbol id="i-star" viewBox="0 0 576 512"><path d="M316.9 18C311.6 7 300.4 0 288.1 0s-23.4 7-28.8 18L195 150.3 51.4 171.5c-12 1.8-22 10.2-25.7 21.7s-.7 24.2 7.9 32.7L137.8 329 113.2 474.7c-2 12 3 24.2 12.9 31.3s23 8 33.8 2.3l128.3-68.5 128.3 68.5c10.8 5.7 23.9 4.9 33.8-2.3s14.9-19.3 12.9-31.3L438.5 329 542.7 225.9c8.6-8.5 11.7-21.2 7.9-32.7s-13.7-19.9-25.7-21.7L381.2 150.3 316.9 18z"/></symbol><symbol id="i-trophy" viewBox="0 0 576 512"><path d="M400 0H176c-26.5 0-48.1 21.8-47.1 48.2c.2 5.3 .4 10.6 .7 15.8H24C10.7 64 0 74.7 0 88c0 92.6 33.5 157 78.5 200.7c44.3 43.1 98.3 64.8 138.1 75.8c23.4 6.5 39.4 26 39.4 45.6c0 20.9-17 37.9-37.9 37.9H192c-17.7 0-32 14.3-32 32s14.3 32 32 32H384c17.7 0 32-14.3 32-32s-14.3-32-32-32H357.9C337 448 320 431 320 410.1c0-19.6 15.9-39.2 39.4-45.6c39.9-11 93.9-32.7 138.2-75.8C542.5 245 576 180.6 576 88c0-13.3-10.7-24-24-24H446.4c.3-5.2 .5-10.4 .7-15.8C448.1 21.8 426.5 0 400 0zM48.9 112h84.4c9.1 90.1 29.2 150.3 51.9 190.6c-24.9-11-50.8-26.5-73.2-48.3c-32-31.1-58-76-63-142.3zM464.1 254.3c-22.4 21.8-48.3 37.3-73.2 48.3c22.7-40.3 42.8-100.5 51.9-190.6h84.4c-5.1 66.3-31.1 111.2-63 142.3z"/></symbol></svg>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="scroll-progress" aria-hidden="true"></div>
+
+    <header class="site-header" id="siteHeader">
+        <nav class="nav" aria-label="Primary">
+            <a href="index.html" class="logo" aria-label="Rogue Global Solutions home">ROGUE<span>GLOBAL SOLUTIONS</span></a>
 
             <ul class="nav-links" id="navLinks">
                 <li><a href="index.html">OUR CULTURE</a></li>
                 <li><a href="pricing.html">PRICING</a></li>
                 <li><a href="services.html">SERVICES</a></li>
                 <li><a href="industries.html">INDUSTRIES</a></li>
-                <li><a href="about.html" class="active">ABOUT US</a></li>
+                <li><a href="about.html" class="active" aria-current="page">ABOUT US</a></li>
+                <li class="mobile-cta"><a href="contact.html">START A CONVERSATION</a></li>
             </ul>
-            
-            <div class="cta-buttons">
-                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=contact.rogueglobalsolutions@gmail.com" target="_blank" class="btn btn-primary">START A CONVERSATION</a>
-            </div>
+
+            <a href="contact.html" class="btn btn-primary nav-cta magnetic">START A CONVERSATION <svg class="icon icon-arrow" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+
+            <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+                <span></span><span></span><span></span>
+            </button>
         </nav>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>ABOUT ROGUE GLOBAL SOLUTIONS</h1>
-            <p>Build, design, and create with world-class Filipino talent in Web & Mobile Development, Video Editing, and Graphic Design/UI/UX.</p>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="section-container">
-            <div class="mission-vision">
-                <div class="mission-box">
-                    <h3><i class="fas fa-bullseye"></i> Our Mission</h3>
-                    <p>Our mission is to empower global companies by providing world-class Filipino talent in web & mobile development, video editing, and graphic design/UI/UX. We deliver consistent, high-quality output that supports long-term business growth for our clients.</p>
+    <main id="main">
+        <section class="hero">
+            <svg class="hero-ring" viewBox="0 0 100 100" aria-hidden="true"><circle class="ring-outer" cx="50" cy="50" r="49.5" pathLength="1"/><circle class="ring-inner" cx="50" cy="50" r="38" pathLength="1"/></svg>
+            <div class="container hero-grid">
+                <div>
+                    <p class="kicker" data-reveal>About Us · Manila, Philippines</p>
+                    <h1 data-split>ABOUT <span class="accent">ROGUE</span> GLOBAL SOLUTIONS</h1>
+                    <p class="hero-lead" data-reveal style="--delay: 550ms">Build, design, and create with world-class Filipino talent in Web &amp; Mobile Development, Video Editing, and Graphic Design/UI/UX.</p>
                 </div>
-                <div class="vision-box">
-                    <h3><i class="fas fa-rocket"></i> Our Vision</h3>
-                    <p>Our vision is to become a leading global outsourcing provider known for exceptional creative and technical talent. Rogue Global Solutions aims to build a future where Filipino developers, video editors, and designers thrive in international remote work.</p>
-                </div>
+                <p class="hero-year" data-reveal style="--delay: 300ms"><small>Founded</small>2020</p>
             </div>
+        </section>
 
-            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-                <h2 style="text-align: center;">WHO WE ARE</h2>
-                <p style="font-size: 1.1rem; color: #555; line-height: 1.8;">Rogue Global Solutions is a focused outsourcing company that supplies creative and tech manpower to global businesses. We specialize in Web & Mobile Development, Video Editing, and Graphic Design/UI/UX — connecting exceptional Filipino talent with international opportunities under one unified brand. Founded with a vision for excellence, we've built a reputation for reliability, quality, and delivering work that moves the needle.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="section section-alt">
-        <div class="section-container">
-            <h2>MEET OUR LEADERSHIP</h2>
-            
-            <div class="leadership-intro">
-                <p>Rogue Global Solutions was built by someone who has been in the trenches across all three disciplines — development, video, and design. That hands-on experience is what drives our standards.</p>
-            </div>
-
-            <div class="leaders-grid">
-                <div class="leader-card">
-                    <div class="leader-image">
-                        <i class="fas fa-user-tie"></i>
+        <section class="section">
+            <div class="container">
+                <div class="split-layout split-layout--top">
+                    <h2 class="statement" data-reveal="left">Who we <span class="accent">are.</span></h2>
+                    <div class="prose" data-reveal="right">
+                        <p>Rogue Global Solutions is a focused outsourcing company that supplies creative and tech talent to businesses worldwide. We specialize in Web &amp; Mobile Development, Video Editing, and Graphic Design/UI/UX, connecting exceptional Filipino talent with international opportunities under one brand.</p>
+                        <p>We've built our reputation on reliability, quality, and work that moves the needle.</p>
                     </div>
-                    <div class="leader-content">
-                        <span class="leader-title">CEO & Founder</span>
-                        <h3 class="leader-name">Adrienne Flores</h3>
-                        <p class="leader-bio">Adrienne founded Rogue Global Solutions with a clear focus: deliver exceptional web, mobile, video, and design talent to global businesses. With a hands-on background across all three core disciplines, he brings a practitioner's perspective to building and managing remote creative and technical teams.</p>
+                </div>
+
+                <div class="mv-grid" data-stagger>
+                    <article class="card mv-card">
+                        <h3><svg class="icon" aria-hidden="true"><use href="#i-bullseye"></use></svg> Our mission</h3>
+                        <p>To empower global companies with world-class Filipino talent in web &amp; mobile development, video editing, and graphic design/UI/UX, delivering consistent, high-quality work that supports long-term growth.</p>
+                    </article>
+                    <article class="card mv-card mv-card--gold">
+                        <h3><svg class="icon" aria-hidden="true"><use href="#i-rocket"></use></svg> Our vision</h3>
+                        <p>To become a leading global outsourcing provider known for exceptional creative and technical talent, and to build a future where Filipino developers, video editors, and designers thrive in international remote work.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-head section-head--split" data-reveal>
+                    <h2 class="section-title">Meet our leadership</h2>
+                    <p class="lead">Rogue Global Solutions was built by someone who has worked hands-on in all three disciplines: development, video, and design. That experience is what drives our standards.</p>
+                </div>
+
+                <article class="leader-card" data-reveal>
+                    <div class="leader-visual" aria-hidden="true">
+                        <div class="monogram">AF</div>
+                    </div>
+                    <div class="leader-body">
+                        <span class="leader-role">CEO &amp; Founder</span>
+                        <h3>Adrienne Flores</h3>
+                        <p>Adrienne founded Rogue Global Solutions with a clear focus: deliver exceptional web, mobile, video, and design talent to global businesses. With a hands-on background in all three core disciplines, he brings a practitioner's perspective to building and managing remote creative and technical teams.</p>
                         <div class="leader-highlights">
-                            <h4><i class="fas fa-trophy"></i> Key Achievements:</h4>
+                            <h4><svg class="icon" aria-hidden="true"><use href="#i-trophy"></use></svg> Key achievements</h4>
                             <ul>
-                                <li>5+ years in web & mobile software development</li>
+                                <li>5+ years in web &amp; mobile software development</li>
                                 <li>5+ years in video editing and creative production</li>
                                 <li>Experienced in graphic design and UI/UX</li>
-                                <li>Successfully built and managed cross-functional remote teams</li>
+                                <li>Built and managed cross-functional remote teams</li>
                             </ul>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="values-section">
-        <div class="section-container">
-            <h2>OUR CORE VALUES</h2>
-            <div class="values-grid">
-                <div class="value-card">
-                    <div class="value-icon"><i class="fas fa-star"></i></div>
-                    <h3>Excellence</h3>
-                    <p>In every deliverable</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon"><i class="fas fa-handshake"></i></div>
-                    <h3>Integrity</h3>
-                    <p>And transparency</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
-                    <h3>Innovation</h3>
-                    <p>In workflows</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon"><i class="fas fa-chart-line"></i></div>
-                    <h3>Growth</h3>
-                    <p>Continuous improvement</p>
-                </div>
-                <div class="value-card">
-                    <div class="value-icon"><i class="fas fa-check-circle"></i></div>
-                    <h3>Reliability</h3>
-                    <p>Consistent performance</p>
-                </div>
+        <section class="values-band">
+            <div class="container">
+                <h2 class="section-title" data-split>Our core values</h2>
+                <ul class="values" data-stagger>
+                    <li class="value"><svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg><h3>Excellence</h3><p>In every deliverable</p></li>
+                    <li class="value"><svg class="icon" aria-hidden="true"><use href="#i-handshake"></use></svg><h3>Integrity</h3><p>And transparency</p></li>
+                    <li class="value"><svg class="icon" aria-hidden="true"><use href="#i-lightbulb"></use></svg><h3>Innovation</h3><p>In workflows</p></li>
+                    <li class="value"><svg class="icon" aria-hidden="true"><use href="#i-chart-line"></use></svg><h3>Growth</h3><p>Continuous improvement</p></li>
+                    <li class="value"><svg class="icon" aria-hidden="true"><use href="#i-circle-check"></use></svg><h3>Reliability</h3><p>Consistent performance</p></li>
+                </ul>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="contact" class="contact-section">
-        <div class="section-container">
-            <h2>GET IN TOUCH</h2>
-            <p style="color: #666; font-size: 1.1rem; margin-bottom: 2rem;">Ready to build your team? Let's start a conversation about your needs.</p>
-            
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <a href="mailto:contact.rogueglobalsolutions@gmail.com">contact.rogueglobalsolutions@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Manila, Philippines</span>
+        <section class="cta-band" id="contact">
+            <div class="container">
+                <h2 data-split>Let's work together.</h2>
+                <div data-reveal>
+                    <p>Ready to build your team? Send us a message, or email us directly at <a href="mailto:contact.rogueglobalsolutions@gmail.com">contact.rogueglobalsolutions@gmail.com</a>.</p>
+                    <div class="hero-actions">
+                        <a href="contact.html" class="btn btn-dark magnetic">START A CONVERSATION <svg class="icon icon-arrow" aria-hidden="true"><use href="#i-arrow-right"></use></svg></a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+    </main>
 
     <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>ROGUE GLOBAL SOLUTIONS</h3>
-                <p style="color: #ccc; margin-bottom: 1rem;">Creative & Tech Manpower Outsourcing</p>
-                <p style="color: #888; font-size: 0.9rem;">Global Headquarters</p>
+        <div class="container">
+            <div class="footer-grid" data-stagger>
+                <div class="footer-brand">
+                    <a href="index.html" class="logo" aria-label="Rogue Global Solutions home">ROGUE<span>GLOBAL SOLUTIONS</span></a>
+                    <p>Creative &amp; Tech Manpower Outsourcing</p>
+                    <small>Global Headquarters · Manila, Philippines</small>
+                </div>
+                <div>
+                    <h3>OUR SERVICES</h3>
+                    <ul>
+                        <li><a href="services.html#web">Web Development</a></li>
+                        <li><a href="services.html#web">Mobile App Development</a></li>
+                        <li><a href="services.html#video">Video Editing</a></li>
+                        <li><a href="services.html#design">Graphic Design &amp; UI/UX</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>COMPANY</h3>
+                    <ul>
+                        <li><a href="index.html">Our Culture</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="contact.html">Start a Conversation</a></li>
+                    </ul>
+                </div>
+                    <div>
+                        <h3>AREAS WE SERVE</h3>
+                        <ul>
+                            <li>North America</li>
+                            <li>Europe</li>
+                            <li>Asia Pacific</li>
+                            <li>Global Support</li>
+                        </ul>
+                    </div>
             </div>
-            <div class="footer-section">
-                <h3>OUR SERVICES</h3>
-                <ul>
-                    <li><a href="services.html">Web Development</a></li>
-                    <li><a href="services.html">Mobile App Development</a></li>
-                    <li><a href="services.html">Video Editing</a></li>
-                    <li><a href="services.html">Graphic Design & UI/UX</a></li>
-                </ul>
+
+            <div class="footer-wordmark" aria-hidden="true">ROGUE</div>
+
+            <div class="footer-bottom">
+                <p>© 2026 Rogue Global Solutions. All rights reserved.</p>
+                <nav aria-label="Legal">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="#top">Back to top <svg class="icon" aria-hidden="true"><use href="#i-arrow-up"></use></svg></a>
+                </nav>
             </div>
-            <div class="footer-section">
-                <h3>COMPANY</h3>
-                <ul>
-                    <li><a href="index.html">Our Culture</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="#contact">Start a Conversation</a></li>
-                </ul>
-            </div>
-            <div class="footer-section">
-                <h3>AREAS WE SERVICE</h3>
-                <ul>
-                    <li><a href="#">North America</a></li>
-                    <li><a href="#">Europe</a></li>
-                    <li><a href="#">Asia Pacific</a></li>
-                    <li><a href="#">Global Support</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>Rogue Global Solutions © 2026 All Rights reserved. | Privacy Policy | Terms | Payments</p>
         </div>
     </footer>
-
-    <script>
-        const hamburger = document.getElementById('hamburger');
-        const navLinks = document.getElementById('navLinks');
-        const body = document.body;
-
-        hamburger.addEventListener('click', (e) => {
-            e.stopPropagation();
-            hamburger.classList.toggle('active');
-            navLinks.classList.toggle('active');
-            
-            if (navLinks.classList.contains('active')) {
-                body.style.overflow = 'hidden';
-            } else {
-                body.style.overflow = '';
-            }
-        });
-
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-                body.style.overflow = '';
-            });
-        });
-
-        navLinks.addEventListener('click', (e) => {
-            if (e.target === navLinks) {
-                hamburger.classList.remove('active');
-                navLinks.classList.remove('active');
-                body.style.overflow = '';
-            }
-        });
-    </script>
 </body>
 </html>
